@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# AI CV Tailoring Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project aims to build a web-based platform that leverages AI to help job seekers tailor their CVs to specific job descriptions. The platform is user-friendly, secure, and ensures compliance with data protection laws like GDPR.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+- **AI-Powered CV Tailoring**: Users can upload their CVs, input job descriptions, and get tailored CVs optimized for their desired roles.
+- **File Support**: Uploads in PDF or Word format, with tailored CVs available for download in the same formats.
+- **Token-Based System**: Users are allocated tokens monthly (e.g., 7 CVs for free users), with additional tokens available via subscription.
+- **Recommendations**: The platform suggests actionable steps like taking courses or participating in open-source projects to enhance users' career prospects.
+- **User Accounts**: Secure authentication for personalized experiences and token tracking.
+- **Dark Mode and Light Mode**: User-friendly themes for accessibility and comfort.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technology Stack
 
-### `yarn test`
+### Frontend
+- **React.js**: For building a responsive and interactive user interface.
+- **Bootstrap**: For styling and layout.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
+- **Firebase**: Authentication, database, and hosting.
+- **AI Integration**: OpenAI API for text generation and CV tailoring.
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Roadmap
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Phase 1**: Build the MVP with essential features like CV upload, AI tailoring, and token system.
+2. **Phase 2**: Add advanced recommendations and analytics.
+3. **Phase 3**: Implement subscription plans and additional file formats.
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Security and Compliance
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Data Security**: All user data is encrypted in transit and at rest.
+- **GDPR Compliance**: User data handling policies ensure compliance with global standards.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributing
 
-## Learn More
+We welcome contributions! Please fork the repository, create a feature branch, and submit a pull request.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+This project is licensed under the [MIT License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For questions or support, please contact [Antony Kinuthia](https://antonykinuthia.xyz).
