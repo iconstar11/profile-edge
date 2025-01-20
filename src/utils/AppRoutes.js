@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '../components/Shared/Navbar';
 import HomePage from '../components/HomePage';
 import NotFoundPage from '../components/NotFoundPage';
+import UploadPage from '../components/UploadPage';
 
 const AppRoutes = () => {
   return (
@@ -20,6 +21,8 @@ const AppRoutes = () => {
         <Routes>
           {/* Primary Route for Home Page */}
           <Route path="/" element={<HomePage />} />
+          <Route path="/upload" element={<UploadPage/>} />
+
 
           {/* Fallback Route for No Page Found */}
           <Route path="*" element={<NotFoundPage />} />
