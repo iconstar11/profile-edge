@@ -3,13 +3,13 @@
 import React from 'react';
 import './App.css'; // Optional: Import global CSS for your app
 import AppRoutes from './utils/AppRoutes';
+import { ThemeProvider } from './utils/ThemeContext';
 
 const App = () => {
   return (
-    <div className="App">
-      {/* Render the AppRoutes */}
+    <ThemeProvider>
       <AppRoutes />
-    </div>
+    </ThemeProvider>
   );
 };
 
