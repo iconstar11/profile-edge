@@ -46,7 +46,7 @@ const UploadPage = () => {
         <button type="submit" className="submit-button">Submit</button>
       </form>
       <p className="skip-step">
-        Don’t have a file? <a href="#">Skip this step</a>
+        Don’t have a file? <a href="#">Create One</a>
       </p>
     </div>
   );
