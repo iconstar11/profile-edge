@@ -6,9 +6,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Components
 import Navbar from '../components/Shared/Navbar';
-import HomePage from '../components/HomePage';
-import NotFoundPage from '../components/NotFoundPage';
-import UploadPage from '../components/UploadPage';
+import HomePage from '../pages/HomePage';
+import NotFoundPage from '../pages/NotFoundPage';
+import UploadPage from '../pages/UploadPage';
+import SignUpPage from '../pages/Auth/SignUpPage';
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
         <Routes>
           {/* Primary Route for Home Page */}
           <Route path="/" element={<HomePage />} />
+          <Route path="/signup" element={<SignUpPage />} />
           <Route path="/upload" element={<UploadPage/>} />
 
 
