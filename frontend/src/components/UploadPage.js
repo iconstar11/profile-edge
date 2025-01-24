@@ -16,15 +16,38 @@ const UploadPage = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (file) {
-      console.log("File uploaded:", file.name); // Replace this with actual upload logic
-      alert("File uploaded successfully!");
-    } else {
-      alert("Please upload a file before submitting.");
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!file) {
+    alert("Please upload a file before submitting.");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("file", file);
+
+  try {
+    const response = await fetch("http://localhost:5000/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Upload failed:", errorData.error);
+      alert("Failed to upload file: " + errorData.error);
+      return;
     }
-  };
+
+    const data = await response.json();
+    console.log("Extracted Text:", data.text);
+    alert("Text extraction successful! Check the console for results.");
+  } catch (error) {
+    console.error("Error uploading file:", error);
+    alert("Error uploading file. Please try again.");
+  }
+};
+
 
   return (
     <div className="upload-page">
