@@ -7,6 +7,7 @@ const fs = require("fs");
 const cors = require("cors"); // Import CORS middleware
 const pdfExtractor = require("./extractors/pdfExtractor");
 const wordExtractor = require("./extractors/wordExtractor");
+const sendToDeepSeek = require("./sendToDeepSeek");
 
 const app = express();
 const port = 5000;
@@ -49,6 +50,11 @@ app.post("/upload", upload.single("file"), async (req, res) => {
         // Clean up the uploaded file after processing
         fs.unlinkSync(filePath);
 
+        // Call DeepSeek API to process the extracted text
+        const deepSeekResponse = await sendToDeepSeek(extractedText);
+
+        console.log("DeepSeek Response", deepSeekResponse)
+
         // Respond with the extracted text
         res.json({ text: extractedText });
     } catch (error) {
@@ -60,4 +66,5 @@ app.post("/upload", upload.single("file"), async (req, res) => {
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
+    console.log("DeepSeek API Key:", process.env.DEEPSEEK_API_KEY);
 });
