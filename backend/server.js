@@ -4,11 +4,15 @@ const express = require("express");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const cors = require("cors"); // Import CORS middleware
 const pdfExtractor = require("./extractors/pdfExtractor");
 const wordExtractor = require("./extractors/wordExtractor");
 
 const app = express();
 const port = 5000;
+
+// Enable CORS for all origins
+app.use(cors());
 
 // Configure Multer for file uploads
 const upload = multer({
