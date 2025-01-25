@@ -1,0 +1,173 @@
+/* AuthForm.css */
+.auth-container {
+    display: flex;
+    height: 90vh;
+    background-color: var(--bg-color);
+    justify-content: space-between;
+}
+
+.auth-slideshow {
+    flex: 1;
+    max-width: 49%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out, box-shadow 0.3s ease;
+    margin: 2rem;
+    border-radius: 1.4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.doc {
+    min-width: 49%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-form {
+    flex: 1;
+    max-width: 480px;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-form h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.auth-subtext {
+    margin-bottom: 2rem;
+    color: var(--secondary-text);
+}
+
+.auth-subtext-link {
+    color: var(--primary-accent);
+    transition: color 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.form-group label {
+    position: absolute;
+    left: 1rem;
+    top: -0.6rem;
+    background: var(--bg-color);
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    transition: all 0.3s ease;
+}
+
+.checkbox-group {
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-text);
+}
+
+.checkbox-group input {
+    accent-color: var(--primary-accent);
+}
+
+.create-account-btn {
+    background: var(--secondary-accent);
+    color: var(--text-color);
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.create-account-btn:hover {
+    opacity: 0.9;
+}
+
+.social-login {
+    margin-top: 2rem;
+}
+
+.divider {
+    text-align: center;
+    position: relative;
+    margin: 2rem 0;
+    color: var(--secondary-text);
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 34%;
+    height: 1px;
+    background: var(--border-color);
+    transition: background 0.3s ease;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: var(--primary-accent);
+    border-color: var(--primary-accent);
+    color: var(--bg-color);
+}
+
+.social-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: var(--icon-filter);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+}
+
+.git {
+    background-color: white;
+}
