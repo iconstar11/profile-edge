@@ -1,15 +1,48 @@
 // src/components/HomePage.js
 
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../firebase/AuthContext';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../firebase/firebaseConfig';
 import { Link } from 'react-router-dom';
 import './HomePage.css'; // Import CSS for styling
 
 const HomePage = () => {
+  const { currentUser } = useContext(AuthContext);
+    const [nickname, setNickname] = useState('');
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            if (currentUser) {
+                try {
+                    // Fetch user data from Firestore
+                    const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+                    if (userDoc.exists()) {
+                        setNickname(userDoc.data().nickname);
+                    } else {
+                        console.log('No such document!');
+                    }
+                } catch (error) {
+                    console.error('Error fetching user data:', error);
+                } finally {
+                    setLoading(false);
+                }
+            }
+        };
+
+        fetchUserData();
+    }, [currentUser]);
+
+    if (loading) {
+        return <div>Loading...</div>; // Show a loading spinner while fetching data
+    }
   return (
     <div className="homepage">
       {/* Hero Section */}
       <section className="hero">
         <h1>Tailor Your CV with AI Precision</h1>
+        {nickname && <p>Hello, {nickname}!</p>}
         <p>Upload your CV, and let AI optimize it for your dream job in seconds.</p>
         <div className="cta-buttons">
           <Link to="/signup" className="btn btn-primary">Get Started</Link>
