@@ -10,6 +10,7 @@ import HomePage from '../pages/HomePage';
 import NotFoundPage from '../pages/NotFoundPage';
 import UploadPage from '../pages/UploadPage';
 import SignUpPage from '../pages/Auth/SignUpPage';
+import SignInPage from '../pages/Auth/SignInPage';
 
 const AppRoutes = () => {
   return (
@@ -23,6 +24,7 @@ const AppRoutes = () => {
           {/* Primary Route for Home Page */}
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin" element={<SignInPage />} />
           <Route path="/upload" element={<UploadPage/>} />
 
 
