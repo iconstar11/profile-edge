@@ -17,9 +17,39 @@ function SignUpPage() {
     const [nickname, setNickname] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [passwordErrors, setPasswordErrors] = useState([]);
     const navigate = useNavigate();
 
     const images = [image1, image2, image3];
+
+    // Password validation function
+    const validatePassword = (value) => {
+        const errors = [];
+
+        if (value.length < 8) {
+            errors.push("Password must be at least 8 characters long.");
+        }
+        if (!/[A-Z]/.test(value)) {
+            errors.push("Password must contain at least one uppercase letter.");
+        }
+        if (!/[a-z]/.test(value)) {
+            errors.push("Password must contain at least one lowercase letter.");
+        }
+        if (!/[0-9]/.test(value)) {
+            errors.push("Password must contain at least one number.");
+        }
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+            errors.push("Password must contain at least one special character.");
+        }
+
+        setPasswordErrors(errors);
+    };
+
+    const handlePasswordChange = (e) => {
+        const value = e.target.value;
+        setPassword(value);
+        validatePassword(value);
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,6 +59,13 @@ function SignUpPage() {
         // Basic form validation
         if (!email || !password || !nickname) {
             setError('Please fill in all fields.');
+            setLoading(false);
+            return;
+        }
+
+        // Check if password meets all requirements
+        if (passwordErrors.length > 0) {
+            setError('Please fix the password errors.');
             setLoading(false);
             return;
         }
@@ -94,10 +131,25 @@ function SignUpPage() {
                                 type="password"
                                 placeholder="Enter your password"
                                 value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                onChange={handlePasswordChange}
                                 required
+                                style={{
+                                    border: passwordErrors.length > 0 ? "1px solid red" : "1px solid green",
+                                }}
                             />
                             <label>Password</label>
+                            {passwordErrors.length > 0 && (
+                                <ul className="password-error-list">
+                                    {passwordErrors.map((error, index) => (
+                                        <li key={index} style={{ color: "red" }}>
+                                            {error}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                            {passwordErrors.length === 0 && password.length > 0 && (
+                                <p style={{ color: "green" }}>Password is strong!</p>
+                            )}
                         </div>
 
                         <div className="checkbox-group">
