@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 :root {
@@ -27,7 +27,7 @@ body {
 .theme-toggle {
   margin-left: 1rem;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.15s ease;
 }
 
 .theme-toggle:hover {
