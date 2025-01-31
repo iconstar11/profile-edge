@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../../firebase/firebaseConfig';
+import { auth, db } from '../../firebase/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 import image1 from '../../assets/pic_6.jpeg';
 import image2 from '../../assets/pic_7.jpeg';
 import image3 from '../../assets/pic_8.jpeg';
@@ -74,10 +75,8 @@ function SignUpPage() {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-<<<<<<< HEAD
             // No need to manually add tokens, handled in backend (Cloud Function)
             console.log("User created successfully:", user.uid);
-=======
             // Store additional user data in Firestore
             await setDoc(doc(db, 'users', user.uid), {
                 firstName: firstName,
@@ -85,7 +84,6 @@ function SignUpPage() {
                 email: email,
                 createdAt: new Date(),
             });
->>>>>>> 909ae46b0143c954f999a1a64ab41207ae481517
 
             // Redirect to dashboard
             navigate('/');
