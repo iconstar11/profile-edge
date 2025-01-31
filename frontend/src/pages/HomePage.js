@@ -14,44 +14,59 @@ const HomePage = () => {
 
     // src/components/HomePage.js
 
-useEffect(() => {
-  const fetchUserData = async () => {
-    try {
-      if (currentUser) {
-        // Fetch user data from Firestore
-        const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
-        if (userDoc.exists()) {
-          setNickname(userDoc.data().nickname);
-        } else {
-          console.log('No such document!');
+    useEffect(() => {
+      const fetchUserData = async () => {
+        try {
+          if (currentUser) {
+            const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+            if (userDoc.exists()) {
+              setNickname(userDoc.data().nickname);
+            }
+          }
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+        } finally {
+          setLoading(false);
         }
-      }
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-    } finally {
-      setLoading(false); // This now runs whether currentUser exists or not
-    }
-  };
-
-  fetchUserData();
-}, [currentUser]);
-
+      };
+  
+      fetchUserData();
+    }, [currentUser]);
+  
     if (loading) {
-        return <div>Loading...</div>; // Show a loading spinner while fetching data
+      return <div>Loading...</div>;
     }
-  return (
-    <div className="homepage">
-      {/* Hero Section */}
-      <section className="hero">
-        <h1>Tailor Your CV with AI Precision</h1>
-        {nickname && <p>Hello, {nickname}!</p>}
-        <p>Upload your CV, and let AI optimize it for your dream job in seconds.</p>
-        <div className="cta-buttons">
-          <Link to="/signup" className="btn btn-primary">Get Started</Link>
-          <Link to="/learn-more" className="btn btn-secondary">Learn More</Link>
-          <Link to="/upload" className="btn btn-primary">Get Started</Link>
+  
+    return (
+      <div className="homepage">
+        {/* Auth Navigation */}
+        <div className="nav-header">
+          {!currentUser && (
+            <div className="auth-buttons">
+              <Link to="/signin" className="auth-link">
+                Log in
+              </Link>
+              <Link to="/signup" className="auth-link primary">
+                Sign up
+              </Link>
+            </div>
+          )}
         </div>
-      </section>
+  
+        {/* Hero Section */}
+        <section className="hero">
+          <h1>Tailor Your CV with AI Precision</h1>
+          {nickname && <p>Hello, {nickname}!</p>}
+          <p>Upload your CV, and let AI optimize it for your dream job in seconds.</p>
+          <div className="cta-buttons">
+            <Link to="/upload" className="btn btn-primary">
+              Get Started
+            </Link>
+            <Link to="/learn-more" className="btn btn-secondary">
+              Learn More
+            </Link>
+          </div>
+        </section>
 
       {/* How It Works */}
       <section className="how-it-works">
