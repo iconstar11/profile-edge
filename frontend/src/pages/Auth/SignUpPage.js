@@ -145,7 +145,7 @@ function SignUpPage() {
                         <div className="form-group">
                             <input
                                 type="password"
-                                placeholder="Enter your password"
+                                placeholder="Enter your pssword"
                                 value={password}
                                 onChange={handlePasswordChange}
                                 required
