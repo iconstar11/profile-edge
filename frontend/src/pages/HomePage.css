@@ -5,6 +5,58 @@
     line-height: 1.6;
 }
 
+/* Auth Navigation Styles */
+.nav-header {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    z-index: 1000;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .auth-link {
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .auth-link:not(.primary) {
+    color: #333;
+    border: 1px solid #e0e0e0;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .auth-link.primary {
+    background: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+  }
+  
+  .auth-link:not(.primary):hover {
+    background: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .auth-link.primary:hover {
+    background: #0069d9;
+    border-color: #0062cc;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Existing hero section styles */
+  .hero {
+    text-align: center;
+    padding: 120px 20px 60px;
+    /* Add padding-top to account for nav */
+  }
 .hero {
     text-align: center;
     padding: 50px 20px;
@@ -30,7 +82,7 @@
 .how-it-works,
 .features,
 .pricing {
-    padding: 20px;
+    padding: 30px;
     text-align: center;
 }
 
