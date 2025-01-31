@@ -15,6 +15,8 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
+DEEPSEEK_API_KEY=sk-ad02ea42403a4429bb7d05502d027ddd
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);

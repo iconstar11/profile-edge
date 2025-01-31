@@ -3,7 +3,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../firebase/AuthContext';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../firebase/firebaseConfig';
+import { db } from '../../../firebaseConfig';
 import { Link } from 'react-router-dom';
 import './HomePage.css'; // Import CSS for styling
 

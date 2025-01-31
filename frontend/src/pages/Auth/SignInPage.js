@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../../firebase/firebaseConfig'; // Import Firebase auth
+import { auth } from '../../../../firebaseConfig'; // Import Firebase auth
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Import signInWithEmailAndPassword
 import image1 from '../../assets/pic_6.jpeg';
 import image2 from '../../assets/pic_7.jpeg';

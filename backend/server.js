@@ -9,7 +9,7 @@ const cors = require("cors"); // Import CORS middleware
 const pdfExtractor = require("./extractors/pdfExtractor");
 const wordExtractor = require("./extractors/wordExtractor");
 const sendToDeepSeek = require("./sendToDeepSeek");
-const admin = require('./config'); // Firebase Admin initialization
+const admin = require('../firebaseConfig')
 const db = admin.firestore(); // Access Firestore
 const auth = admin.auth(); // Access Auth
 
