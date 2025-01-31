@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { auth, db } from '../../../../firebaseConfig';
+import { auth, db } from '../../firebase/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import image1 from '../../assets/pic_6.jpeg';
 import image2 from '../../assets/pic_7.jpeg';
 import image3 from '../../assets/pic_8.jpeg';
@@ -86,6 +86,8 @@ function SignUpPage() {
                 lastName: lastName,
                 email: email,
                 createdAt: new Date(),
+                tokens: 3,
+                lastReset: serverTimestamp(),
             });
 
             // Redirect to dashboard
