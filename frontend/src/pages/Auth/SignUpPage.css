@@ -67,6 +67,59 @@
     transition: background-image 1s ease-in-out;
 }
 
+/* Update your SignUpPage.css */
+.password-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between input and error messages */
+  }
+  
+  .password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 17%; /* Adjust this value based on your input height */
+    transform: translateY(-50%);
+    /* rest of the styles remain the same */
+  }
+  
+  .password-group input {
+    padding-right: 40px !important;
+    margin-bottom: 0; /* Remove any existing bottom margin */
+  }
+  
+  .password-error-list {
+    margin-top: 4px;
+    padding-left: 20px;
+  }
+
+  
+
+.back-to-website-btn {
+    position: absolute;
+    top: 20px;
+    left: 450px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+  }
+  
+  .back-to-website-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-1px);
+  }
+  
+  .auth-slideshow {
+    position: relative; 
+  }
+
 .form-group input {
     width: 100%;
     padding: 1rem;
