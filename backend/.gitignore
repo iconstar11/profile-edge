@@ -142,3 +142,7 @@ dist
 .svelte-kit
 
 # End of https://www.toptal.com/developers/gitignore/api/node
+
+# .gitignore
+firebase-service-account.json
+profile-edge-e5854-firebase-adminsdk-fbsvc-29f812b493.json

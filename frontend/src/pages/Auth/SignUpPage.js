@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth, db } from '../../firebase/firebaseConfig';
+import { auth } from '../../firebase/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
 import image1 from '../../assets/pic_6.jpeg';
 import image2 from '../../assets/pic_7.jpeg';
 import image3 from '../../assets/pic_8.jpeg';
@@ -25,22 +24,11 @@ function SignUpPage() {
     // Password validation function
     const validatePassword = (value) => {
         const errors = [];
-
-        if (value.length < 8) {
-            errors.push("Password must be at least 8 characters long.");
-        }
-        if (!/[A-Z]/.test(value)) {
-            errors.push("Password must contain at least one uppercase letter.");
-        }
-        if (!/[a-z]/.test(value)) {
-            errors.push("Password must contain at least one lowercase letter.");
-        }
-        if (!/[0-9]/.test(value)) {
-            errors.push("Password must contain at least one number.");
-        }
-        if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
-            errors.push("Password must contain at least one special character.");
-        }
+        if (value.length < 8) errors.push("Password must be at least 8 characters long.");
+        if (!/[A-Z]/.test(value)) errors.push("Password must contain at least one uppercase letter.");
+        if (!/[a-z]/.test(value)) errors.push("Password must contain at least one lowercase letter.");
+        if (!/[0-9]/.test(value)) errors.push("Password must contain at least one number.");
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) errors.push("Password must contain at least one special character.");
 
         setPasswordErrors(errors);
     };
@@ -75,12 +63,8 @@ function SignUpPage() {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-            // Store additional user data in Firestore
-            await setDoc(doc(db, 'users', user.uid), {
-                nickname: nickname,
-                email: email,
-                createdAt: new Date(),
-            });
+            // No need to manually add tokens, handled in backend (Cloud Function)
+            console.log("User created successfully:", user.uid);
 
             // Redirect to dashboard
             navigate('/');
@@ -165,16 +149,8 @@ function SignUpPage() {
                     <div className="social-login">
                         <p className="divider">Or register with</p>
                         <div className="social-buttons">
-                            <SocialButton
-                                icon={googleIcon}
-                                text="Continue with Google"
-                            />
-                            <SocialButton
-                                icon={gitIcon}
-                                text="Continue with GitHub"
-                                className="git"
-                                style={{ backgroundColor: "white" }}
-                            />
+                            <SocialButton icon={googleIcon} text="Continue with Google" />
+                            <SocialButton icon={gitIcon} text="Continue with GitHub" className="git" style={{ backgroundColor: "white" }} />
                         </div>
                     </div>
                 </div>
