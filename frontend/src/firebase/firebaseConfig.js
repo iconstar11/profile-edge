@@ -4,6 +4,8 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth"; // Import Firebase Authentication
 import { getFirestore } from "firebase/firestore"; // Import Firestore
 
+
+
 // Firebase configuration using environment variables
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -15,7 +17,7 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
-DEEPSEEK_API_KEY=sk-ad02ea42403a4429bb7d05502d027ddd
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
