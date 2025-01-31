@@ -150,7 +150,7 @@ function SignUpPage() {
 
                         <div className="form-group password-group">
                             <input
-                                type={showPassword ? 'text' : 'password'}
+                                type="password"
                                 placeholder="Enter your password"
                                 value={password}
                                 onChange={handlePasswordChange}
