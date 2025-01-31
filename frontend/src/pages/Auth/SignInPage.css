@@ -6,6 +6,63 @@
     justify-content: space-between;
 }
 
+.back-to-website-btn {
+    position: absolute;
+    top: 20px;
+    left: 450px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+  }
+  
+  .back-to-website-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-1px);
+  }
+  
+  .auth-slideshow {
+    position: relative; 
+  }
+
+  /* Password Toggle Styles */
+.password-group {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: #333;
+}
+
+.password-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Adjust input padding to prevent text overlap */
+.password-group input {
+    padding-right: 40px !important;
+}
+
 .auth-slideshow {
     flex: 1;
     max-width: 49%;
