@@ -46,7 +46,7 @@
 
 .auth-subtext-link {
     color: var(--primary-accent);
-    transition: color 0.3s ease;
+    transition: color 0.15s ease;
 }
 
 .form-group {
@@ -128,7 +128,7 @@
     font-size: 1rem;
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: all 0.3s ease;
+    transition: all 0.15s ease;
 }
 
 .form-group label {
@@ -139,7 +139,7 @@
     padding: 0 0.5rem;
     font-size: 0.9rem;
     color: var(--secondary-text);
-    transition: all 0.3s ease;
+    transition: all 0.15s ease;
 }
 
 .checkbox-group {
@@ -162,7 +162,7 @@
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.15s ease;
 }
 
 .create-account-btn:hover {
@@ -188,7 +188,7 @@
     width: 34%;
     height: 1px;
     background: var(--border-color);
-    transition: background 0.3s ease;
+    transition: background 0.15s ease;
 }
 
 .divider::before {
@@ -213,7 +213,7 @@
     border: 1px solid var(--border-color);
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.15s ease;
 }
 
 .social-btn:hover {
