@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../../firebase/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -8,12 +9,14 @@ import image2 from '../../assets/pic_7.jpeg';
 import image3 from '../../assets/pic_8.jpeg';
 import gitIcon from '../../assets/git_png.png';
 import googleIcon from '../../assets/google_png.png';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 import './SignUpPage.css';
 
 function SignUpPage() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [loading, setLoading] = useState(false);
@@ -105,12 +108,15 @@ function SignUpPage() {
 
     return (
         <div className="auth-container">
-            <div className="auth-slideshow" style={{ backgroundImage: `url(${images[currentImageIndex]})` }}></div>
+            <div className="auth-slideshow" style={{ backgroundImage: `url(${images[currentImageIndex]})` }}> 
+    <Link to="/" className="back-to-website-btn">
+      Back to Website →
+    </Link></div>
             <div className='doc'>
                 <div className="auth-form">
                     <h1>Create an account</h1>
                     <p className="auth-subtext">
-                        Already have an account? <a href="/login" className='auth-subtext-link'>Log in</a>
+                        Already have an account? <a href="/signin" className='auth-subtext-link'>Log in</a>
                     </p>
 
                     {error && <p className="error-message">{error}</p>}
@@ -151,9 +157,9 @@ function SignUpPage() {
                             <label>Email</label>
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-group password-group">
                             <input
-                                type="password"
+                                type={showPassword ? 'text' : 'password'}
                                 placeholder="Enter your password"
                                 value={password}
                                 onChange={handlePasswordChange}
@@ -163,6 +169,14 @@ function SignUpPage() {
                                 }}
                             />
                             <label>Password</label>
+                            <button
+                                type="button"
+                                className="password-toggle"
+                                onClick={() => setShowPassword(!showPassword)}
+                                aria-label={showPassword ? 'Hide password' : 'Show password'}
+                            >
+                                {showPassword ? <FiEyeOff /> : <FiEye />}
+                            </button>
                             {passwordErrors.length > 0 && (
                                 <ul className="password-error-list">
                                     {passwordErrors.map((error, index) => (
