@@ -12,27 +12,29 @@ const HomePage = () => {
     const [nickname, setNickname] = useState('');
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchUserData = async () => {
-            if (currentUser) {
-                try {
-                    // Fetch user data from Firestore
-                    const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
-                    if (userDoc.exists()) {
-                        setNickname(userDoc.data().nickname);
-                    } else {
-                        console.log('No such document!');
-                    }
-                } catch (error) {
-                    console.error('Error fetching user data:', error);
-                } finally {
-                    setLoading(false);
-                }
-            }
-        };
+    // src/components/HomePage.js
 
-        fetchUserData();
-    }, [currentUser]);
+useEffect(() => {
+  const fetchUserData = async () => {
+    try {
+      if (currentUser) {
+        // Fetch user data from Firestore
+        const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+        if (userDoc.exists()) {
+          setNickname(userDoc.data().nickname);
+        } else {
+          console.log('No such document!');
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    } finally {
+      setLoading(false); // This now runs whether currentUser exists or not
+    }
+  };
+
+  fetchUserData();
+}, [currentUser]);
 
     if (loading) {
         return <div>Loading...</div>; // Show a loading spinner while fetching data

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -13,13 +13,24 @@ function SignUpPage() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [nickname, setNickname] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [passwordErrors, setPasswordErrors] = useState([]);
     const navigate = useNavigate();
 
     const images = [image1, image2, image3];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => 
+                prevIndex === images.length - 1 ? 0 : prevIndex + 1
+            );
+        }, 5000); // Change image every 5 seconds
+
+        return () => clearInterval(interval);
+    }, [images.length]);
 
     // Password validation function
     const validatePassword = (value) => {
@@ -45,7 +56,7 @@ function SignUpPage() {
         setLoading(true);
 
         // Basic form validation
-        if (!email || !password || !nickname) {
+        if (!email || !password || !firstName || !lastName) {
             setError('Please fill in all fields.');
             setLoading(false);
             return;
@@ -63,8 +74,18 @@ function SignUpPage() {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
+<<<<<<< HEAD
             // No need to manually add tokens, handled in backend (Cloud Function)
             console.log("User created successfully:", user.uid);
+=======
+            // Store additional user data in Firestore
+            await setDoc(doc(db, 'users', user.uid), {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                createdAt: new Date(),
+            });
+>>>>>>> 909ae46b0143c954f999a1a64ab41207ae481517
 
             // Redirect to dashboard
             navigate('/');
@@ -88,15 +109,28 @@ function SignUpPage() {
                     {error && <p className="error-message">{error}</p>}
 
                     <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                placeholder="Nickname"
-                                value={nickname}
-                                onChange={(e) => setNickname(e.target.value)}
-                                required
-                            />
-                            <label>Nickname</label>
+                    <div className="name-fields-row">
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    placeholder="First name"
+                                    value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                    required
+                                />
+                                <label>First Name</label>
+                            </div>
+
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    placeholder="Last name"
+                                    value={lastName}
+                                    onChange={(e) => setLastName(e.target.value)}
+                                    required
+                                />
+                                <label>Last Name</label>
+                            </div>
                         </div>
 
                         <div className="form-group">
