@@ -53,6 +53,19 @@
     margin-bottom: 1.5rem;
     position: relative;
 }
+.name-fields-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.name-fields-row .form-group {
+    flex: 1;
+}
+
+.auth-slideshow {
+    transition: background-image 1s ease-in-out;
+}
 
 .form-group input {
     width: 100%;
