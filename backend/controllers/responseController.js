@@ -1,4 +1,5 @@
 const { db } = require('../config/firebase');
+const logger = require('../utils/logger');
 
 exports.getResponse = async (req, res) => {
   try {
@@ -16,8 +17,9 @@ exports.getResponse = async (req, res) => {
       success: true,
       deepSeekResponse: uploadDoc.data().deepSeekResponse,
     });
+    logger.info('✅ Fetched response for document:', documentId);
   } catch (error) {
-    console.error('❌ Error fetching response:', error);
+    logger.error('❌ Error fetching response:', error);
     res.status(500).json({ error: 'Failed to fetch response', details: error.message });
   }
 };

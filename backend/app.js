@@ -4,6 +4,7 @@ const cors = require('cors');
 const { db } = require('./config/firebase');
 const uploadRoutes = require('./routes/uploadRoutes');
 const healthRoutes = require('./routes/healthRoutes');
+const logger = require('./utils/logger');
 
 const app = express();
 
@@ -23,9 +24,9 @@ const testFirestoreConnection = async () => {
   try {
     // Use the initialized Firestore instance
     await db.collection('test').doc('connection-test').set({ test: new Date() });
-    console.log('✅ Firestore connection verified');
+    logger.info('✅ Firestore connection verified');
   } catch (error) {
-    console.error('❌ Firestore connection failed:', error);
+    logger.error('❌ Firestore connection failed:', error);
     process.exit(1);
   }
 };

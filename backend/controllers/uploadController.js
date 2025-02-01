@@ -5,6 +5,7 @@ const sendToDeepSeek = require('../sendToDeepSeek');
 const fs = require('fs');
 const path = require('path');
 const { cleanupUploadedFile } = require('../utils/fileCleanup');
+const logger = require('../utils/logger');
 
 exports.handleUpload = async (req, res) => {
   try {
@@ -36,7 +37,7 @@ exports.handleUpload = async (req, res) => {
     let deepSeekResponse;
     try {
       deepSeekResponse = await sendToDeepSeek(extractedText);
-      console.log('✅ DeepSeek response received');
+      logger.info('✅ DeepSeek response received');
     } catch (apiError) {
       // ... error handling
     }
@@ -55,7 +56,7 @@ exports.handleUpload = async (req, res) => {
     // ... success response
 
   } catch (error) {
-    console.error('🚨 End-to-end error:', error);
+    logger.error('🚨 End-to-end error:', error);
     res.status(500).json({ error: 'Failed to process the file', details: error.message });
   }
 };
