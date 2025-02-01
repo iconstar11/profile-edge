@@ -16,7 +16,7 @@ const sendToDeepSeek = async (extractedText) => {
             messages: [
                 {
                     role: "system",
-                    content: "You are a professional resume assistant. Please create a polished CV using the provided text.",
+                    content: "You are an ATS-optimization specialist. Restructure this raw text into a professional CV using: -Reverse-chronological format - 3-5 bullet points per position- Industry-specific action verbs - Section headers: Summary, Experience, Education, Skills- No first-person pronouns"
                 },
                 {
                     role: "user",
