@@ -8,6 +8,14 @@ const ResponsePage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  // Utility function to clean the response data
+  const cleanResponseData = (data) => {
+    return data
+      .replace(/\*\*/g, '') // Remove **
+      .replace(/###/g, '')  // Remove ###
+      .trim();              // Trim any leading/trailing whitespace
+  };
+
   useEffect(() => {
     const fetchResponse = async () => {
       try {
@@ -27,12 +35,11 @@ const ResponsePage = () => {
         );
 
         if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.error || "Failed to fetch response");
+          throw new Error("Failed to fetch response");
         }
 
         const data = await response.json();
-        setResponseData(data.deepSeekResponse);
+        setResponseData(cleanResponseData(data.deepSeekResponse));
       } catch (err) {
         console.error("Error fetching response:", err);
         setError(err.message);
@@ -57,7 +64,11 @@ const ResponsePage = () => {
       <h1>Your Polished CV</h1>
       <div className="response-content">
         {responseData ? (
-          <pre>{responseData}</pre>
+          <div className="formatted-response">
+            {responseData.split('\n').map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}
+          </div>
         ) : (
           <p>No response data available.</p>
         )}
