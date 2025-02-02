@@ -14,7 +14,8 @@ try {
 
 // Get Firestore instance
 const db = admin.firestore();
+const FieldValue = admin.firestore.FieldValue;
 
 // Export for use in other files
-module.exports = { admin, db };
+module.exports = { admin, db, FieldValue };
 
