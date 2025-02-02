@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { auth } from '../firebase/firebaseConfig'; 
+import { useNavigate } from 'react-router-dom';
 import './UploadPage.css';
 
 const UploadPage = () => {
+  const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,52 +23,59 @@ const UploadPage = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    if (!file) {
-      alert("Please upload a file before submitting.");
-      setIsSubmitting(false);
-      return;
-    }
+  e.preventDefault();
+  setIsSubmitting(true);
+  
+  if (!file) {
+    alert("Please upload a file before submitting.");
+    setIsSubmitting(false);
+    return;
+  }
 
-    // Check if user is logged in
-    const user = auth.currentUser;
-    if (!user) {
-      alert("Please log in to upload files.");
-      setIsSubmitting(false);
-      return;
-    }
+  // Check if user is logged in
+  const user = auth.currentUser;
+  if (!user) {
+    alert("Please log in to upload files.");
+    setIsSubmitting(false);
+    return;
+  }
 
-    const formData = new FormData();
-    formData.append("file", file);
+  const formData = new FormData();
+  formData.append("file", file);
 
-    try {
-      const response = await fetch("http://localhost:5000/upload", {
-        method: "POST",
-        body: formData,
-        headers: {
-          "X-User-Id": user.uid // Add user ID to headers
-        }
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        setErrorMessage(errorData.error || "Upload failed");
-        return;
+  try {
+    const response = await fetch("http://localhost:5000/api/upload", {
+      method: "POST",
+      body: formData,
+      headers: {
+        "X-User-Id": user.uid 
       }
+    });
 
-      const data = await response.json();
-      console.log("Extracted Text:", data.text);
-      alert("Upload successful! Document ID: " + data.documentId);
-      
-    } catch (error) {
-      console.error("Error uploading file:", error);
-      setErrorMessage("Error uploading file. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+    if (!response.ok) {
+      const errorData = await response.json();
+      setErrorMessage(errorData.error || "Upload failed");
+      return;
     }
-  };
+
+    const data = await response.json();
+    console.log("Upload response:", data);
+    
+    // Navigate with both document ID and user ID
+    navigate("/response", {
+      state: {
+        documentId: data.documentId,  // Use data.documentId from the response
+        userId: user.uid  // Use the authenticated user's ID
+      },
+    });
+
+  } catch (error) {
+    console.error("Error uploading file:", error);
+    setErrorMessage("Error uploading file. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="upload-page">
