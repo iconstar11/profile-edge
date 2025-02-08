@@ -1,12 +1,72 @@
+/* Global Reset */
 * {
   box-sizing: border-box;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1em;
+}
+
+small {
+  font-size: 0.875rem;
+  color: var(--secondary-text-color);
+}
+
+/* Root Variables */
 :root {
   /* Light Theme */
   --bg-color: #F9F9F9;
   --text-color: #212121;
+  --secondary-text-color: #757575;
   --primary-accent: #4CAF50;
   --secondary-accent: #FFC107;
   --border-color: #E0E0E0;
@@ -16,14 +76,36 @@
   /* Dark Theme */
   --bg-color: #121212;
   --text-color: #E0E0E0;
+  --secondary-text-color: #BDBDBD;
   --border-color: #333333;
 }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+/* Buttons */
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
+button.primary {
+  background-color: var(--primary-accent);
+  color: white;
+}
+
+button.secondary {
+  background-color: var(--secondary-accent);
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Theme Toggle */
 .theme-toggle {
   margin-left: 1rem;
   cursor: pointer;
