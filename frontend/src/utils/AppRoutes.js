@@ -13,6 +13,7 @@ import SignUpPage from '../pages/Auth/SignUpPage';
 import SignInPage from '../pages/Auth/SignInPage';
 import ResponsePage from '../pages/ResponsePage';
 import TemplatesPage from '../pages/Templates/TemplatesPage';
+import PreviewPage from '../pages/Templates/PriviewPage/PreviewPage';
 
 const AppRoutes = () => {
   return (
@@ -30,6 +31,7 @@ const AppRoutes = () => {
           <Route path="/upload" element={<UploadPage/>} />
           <Route path="/response" element={<ResponsePage />} />
           <Route path='/resumetemplates' element={<TemplatesPage />} />
+          <Route path='/previewpage' element={<PreviewPage />} />  
 
 
           {/* Fallback Route for No Page Found */}
