@@ -1,0 +1,71 @@
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  background: linear-gradient(135deg, var(--bg-color) 0%, #f0f8ff 100%);
+}
+
+.headline {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+.subheader {
+  font-size: 1.25rem;
+  color: var(--secondary-text);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.cta-button {
+  background: var(--primary-accent);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.trust-badges {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trust-badges img {
+  height: 30px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.trust-badges img:hover {
+  opacity: 1;
+}
+
+.hero-visual img {
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, #121212 0%, #1a1a2e 100%);
+}
+
+[data-theme="dark"] .hero-visual img {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
