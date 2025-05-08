@@ -69,3 +69,57 @@
 [data-theme="dark"] .hero-visual img {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 712px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 5%;
+  }
+
+  .hero-content {
+    margin-bottom: 2rem;
+  }
+
+  .headline {
+    font-size: 2rem;
+  }
+
+  .subheader {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 200px;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .trust-badges {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .trust-badges img {
+    height: 24px;
+  }
+
+  .hero-visual img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 712px) and (max-width: 1000px) {
+  .headline {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .hero-visual img {
+    max-width: 400px;
+  }
+
+}
