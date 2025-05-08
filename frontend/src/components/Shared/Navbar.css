@@ -1,0 +1,67 @@
+/* Navbar container */
+.logo-image-wrapper {
+    background-color: #FFC107;
+    padding: 8px;
+    /* Adjust to control gold area size */
+    border-radius: 4px;
+    /* Optional: match your logo shape */
+    display: inline-flex;
+    overflow: hidden;
+    /* Ensures clean edges */
+}
+
+.logo {
+    height: 2rem;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    /* Removes extra space under image */
+}
+
+/* Existing styles (unchanged) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Import a premium font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@600&display=swap');
+
+.logo-text {
+    font-family: 'Poppins', sans-serif;
+    /* Modern sans-serif */
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #4CAF50, #FFC107);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 0.5rem;
+    position: relative;
+
+}
+
+
+/* Dark mode adjustments */
+[data-theme="dark"] .logo-text {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    background-color: var(--bg-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Theme toggle section */
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
