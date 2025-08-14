@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Components
 import Navbar from '../components/Shared/Navbar';
-import HomePage from '../pages/HomePage';
 import NotFoundPage from '../pages/NotFoundPage';
 import UploadPage from '../pages/UploadPage';
 import SignUpPage from '../pages/Auth/SignUpPage';
@@ -15,6 +14,7 @@ import ResponsePage from '../pages/ResponsePage';
 import TemplatesPage from '../pages/Templates/TemplatesPage';
 import Dashboard from '../pages/dashboard';
 import PreviewPage from '../pages/Templates/PriviewPage/PreviewPage'
+import LandingPage from '../pages/LandingPage';
 
 const AppRoutes = () => {
   return (
@@ -26,7 +26,7 @@ const AppRoutes = () => {
         {/* Application Routes */}
         <Routes>
           {/* Primary Route for Home Page */}
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/upload" element={<UploadPage/>} />

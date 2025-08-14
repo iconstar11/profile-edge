@@ -41,4 +41,4 @@ const DownloadButtons = ({ cvRef }) => {
   );
 };
 
-export default DownloadButtons;
+export default DownloadButtons;   

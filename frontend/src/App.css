@@ -70,6 +70,12 @@ small {
   --primary-accent: #4CAF50;
   --secondary-accent: #FFC107;
   --border-color: #E0E0E0;
+  --card-bg-color: #ffffff;
+  --card-hover-bg: #f5f5f5;
+  --primary-accent-hover: #3d8b40;
+  --secondary-accent-hover: #ffb300;
+  --error-color: #ff4444;
+  --disabled-bg: #cccccc;
 }
 
 [data-theme="dark"] {
@@ -78,6 +84,10 @@ small {
   --text-color: #E0E0E0;
   --secondary-text-color: #BDBDBD;
   --border-color: #333333;
+  --card-bg-color: #1E1E1E;
+  --card-hover-bg: #2A2A2A;
+  --error-color: #ff6666;
+  --disabled-bg: #444444;
 }
 
 /* Buttons */
