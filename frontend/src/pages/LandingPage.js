@@ -1,35 +1,80 @@
-import React from 'react';
-import './LandingPage.css';
-import icon from '../assets/git_png.png'
-import icon1 from '../assets/google_png.png'
-
+import React from "react";
+import { CheckCircle } from "lucide-react";
+import "./LandingPage.css";
+import Image from "../assets/pic_8.jpeg";
 
 const LandingPage = () => {
-  const heroImage = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDhjZG1tMmc3cjZ3bHQ4N3ZzZjBhZmJpeGNidWNnamdzbnM2bjRncCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HsgjWtY85LhXmcSFtZ/giphy.gif";
-
   return (
     <div className="landing-page">
+
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1 className="headline">Get 5× More Interviews With AI-Optimized Resumes</h1>
-          <p className="subheader">Upload your resume and let our AI tailor it for any job in minutes</p>
-          <button className="cta-button">Start Free Trial</button>
-          
-          {/* Trust Badges */}
-          <div className="trust-badges">
-            <span>Featured in:</span>
-            <img src={icon} alt="TechCrunch" />
-            <img src={icon1} alt="Forbes" />
+          <h1>
+            Build Smarter <br /> <span className="highlight">CVs with AI</span>
+          </h1>
+          <p>
+            AI-powered CV builder, tailored for your dream job.
+            Create professional, ATS-friendly resumes in minutes.
+          </p>
+          <div className="hero-buttons">
+            <button className="primary-btn">Build My CV Now →</button>
+            <button className="secondary-btn">See Examples</button>
+          </div>
+
+          <div className="badges">
+            <span><CheckCircle className="icon ai" /> AI-Powered</span>
+            <span><CheckCircle className="icon ats" /> ATS-Friendly</span>
+            <span><CheckCircle className="icon free" /> Free to Start</span>
           </div>
         </div>
-        
-        <div className="hero-visual">
-          <img src={heroImage} alt="Profile Edge Demo" />
+
+        <div className="hero-image">
+          <img src={Image} alt="AI CV Builder" />
         </div>
       </section>
 
-      {/* We'll add other sections here later */}
+      {/* Features Section */}
+      <section className="features" id="features">
+        <h2>Why Choose Profile Edge?</h2>
+        <p>
+          Everything you need to create a professional CV that gets you noticed by employers.
+        </p>
+        <div className="feature-grid">
+          <div className="feature-card">
+            <span className="emoji">🤖</span>
+            <h3>AI-Powered Suggestions</h3>
+            <p>
+              Get intelligent recommendations for content, keywords, 
+              and formatting to make your CV stand out.
+            </p>
+          </div>
+          <div className="feature-card">
+            <span className="emoji">🎨</span>
+            <h3>Template Customization</h3>
+            <p>
+              Choose from professional templates and customize them 
+              to match your industry and personal style.
+            </p>
+          </div>
+          <div className="feature-card">
+            <span className="emoji">✅</span>
+            <h3>ATS-Friendly Formatting</h3>
+            <p>
+              Ensure your CV passes Applicant Tracking Systems 
+              with optimized formatting and keyword placement.
+            </p>
+          </div>
+          <div className="feature-card">
+            <span className="emoji">📑</span>
+            <h3>One-Click Export</h3>
+            <p>
+              Download your CV in multiple formats (PDF, Word) 
+              or share it directly with potential employers.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
