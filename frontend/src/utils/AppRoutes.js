@@ -15,6 +15,7 @@ import TemplatesPage from '../pages/Templates/TemplatesPage';
 import Dashboard from '../pages/dashboard';
 import PreviewPage from '../pages/Templates/PriviewPage/PreviewPage'
 import LandingPage from '../pages/LandingPage';
+import CreateCVPage from '../pages/CreateCVPage';
 
 const AppRoutes = () => {
   return (
@@ -34,6 +35,7 @@ const AppRoutes = () => {
           <Route path='/resumetemplates' element={<TemplatesPage />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='preview' element={<PreviewPage />} />  
+          <Route path='/createCv' element={< CreateCVPage/>} />
 
 
           {/* Fallback Route for No Page Found */}

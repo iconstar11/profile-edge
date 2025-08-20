@@ -206,8 +206,10 @@
   font-size: 2.5rem;
   margin-bottom: 10px;
   background: linear-gradient(90deg, #00c853, #aeea00);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .how-it-works-header p {
