@@ -170,6 +170,41 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* How It Works Section */}
+<section className="how-it-works">
+  <div className="how-it-works-header">
+    <h2>How It Works</h2>
+    <p>Get your professional CV ready in just 4 simple steps.</p>
+  </div>
+
+  <div className="steps-container">
+    <div className="step">
+      <div className="step-number">1</div>
+      <h3>Sign Up</h3>
+      <p>Create your free account to get started.</p>
+    </div>
+
+    <div className="step">
+      <div className="step-number">2</div>
+      <h3>Upload CV</h3>
+      <p>Upload your current CV or fill in the form.</p>
+    </div>
+
+    <div className="step">
+      <div className="step-number">3</div>
+      <h3>AI Tailoring</h3>
+      <p>Our AI customizes your CV to match the job.</p>
+    </div>
+
+    <div className="step">
+      <div className="step-number">4</div>
+      <h3>Download</h3>
+      <p>Get your polished CV in Word or PDF format.</p>
+    </div>
+  </div>
+</section>
+
+
       {/* Footer */}
       <footer className="footer">
         <div className="footer-grid">
