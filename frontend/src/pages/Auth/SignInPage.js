@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebaseConfig'; // Import Firebase auth
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Import signInWithEmailAndPassword
-import image1 from '../../assets/pic_6.jpeg';
-import image2 from '../../assets/pic_7.jpeg';
-import image3 from '../../assets/pic_8.jpeg';
+import image1 from '../../assets/login_pic1.jpg';
+import image2 from '../../assets/login_pic2.png';
+import image3 from '../../assets/login_pic3.png';
 import gitIcon from '../../assets/git_png.png';
 import googleIcon from '../../assets/google_png.png';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
