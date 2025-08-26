@@ -2,7 +2,7 @@ import React from "react";
 // import { CheckCircle } from "lucide-react";
 import { Shield, Zap, Download, BarChart, Target, FileText, Palette, Cpu, CheckCircle } from "lucide-react";
 import "./LandingPage.css";
-import Image from "../assets/pic_8.jpeg";
+import Image from "../assets/landing_page.png";
 
 const LandingPage = () => {
   return (
