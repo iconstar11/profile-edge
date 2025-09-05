@@ -17,6 +17,7 @@
     gap: 10px;
     font-size: 0.95rem;
     color: var(--secondary-text-color);
+    flex-wrap: wrap;
 }
 
 .step {
@@ -39,6 +40,8 @@
     height: 2px;
     background: var(--border-color);
 }
+
+
 
 /* Header */
 .create-cv-header h2 {
@@ -183,9 +186,7 @@
     color: var(--text-color);
 }
 
-.btn-outline:hover {
-    background: var(--border-color);
-}
+
 
 .btn-primary {
     background: var(--secondary-accent);
@@ -193,7 +194,11 @@
 }
 
 .btn-primary:hover {
-    background: var(--secondary-accent-hover);
+    background: var(--primary-accent);
+}
+
+.btn-outline:hover {
+    background: var(--primary-accent-hover);
 }
 
 .btn-success {
@@ -223,5 +228,11 @@
     .cv-options {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media (max-width: 740px) {
+    .divider {
+        display: none;
     }
 }

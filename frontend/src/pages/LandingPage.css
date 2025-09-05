@@ -114,7 +114,14 @@
   }
 }
 
+@media (max-width: 1025px) {
+  .hero {
+    height: auto;
+  }
+}
+
 @media (max-width: 600px) {
+
   .hero h1 {
     font-size: 2rem;
   }

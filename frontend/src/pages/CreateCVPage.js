@@ -33,7 +33,7 @@ const CreateCVPage = () => {
             <FileText size={22} />
             <span>Click to upload PDF or DOCX</span>
           </div>
-          <button className="btn-outline">Choose File</button>
+          <button className="btn-success">Choose File</button>
         </div>
 
         {/* Create from Scratch */}
@@ -61,7 +61,7 @@ const CreateCVPage = () => {
             Our AI will conduct a friendly interview to understand your
             background and create a tailored CV.
           </p>
-          <button className="btn-success">Start AI Interview</button>
+          <button className="btn-outline">Start AI Interview</button>
         </div>
       </div>
 

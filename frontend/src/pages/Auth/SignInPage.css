@@ -1,16 +1,29 @@
 /* SignInPage.css */
 .auth-container {
     display: flex;
-    height: 90vh;
+    height: calc(100vh-80px);
     background-color: var(--bg-color);
     justify-content: space-between;
+}
+
+.auth-slideshow {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    max-width: 49%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out, box-shadow 0.15s ease;
+    margin: 2rem;
+    border-radius: 1.4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .back-to-website-btn {
     position: absolute;
     top: 20px;
-    left: 450px;
-    background: transparent;
+    right: 10px;
+    background: var(--disabled-bg);
     border: 1px solid rgba(255, 255, 255, 0.5);
     color: white;
     padding: 8px 20px;
@@ -19,19 +32,34 @@
     font-size: 0.9rem;
     transition: all 0.3s ease;
     backdrop-filter: blur(2px);
-  }
-  
-  .back-to-website-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+}
+
+.back-to-website-btn:hover {
+    background: var(--primary-accent-hover);
     border-color: white;
     transform: translateY(-1px);
-  }
-  
-  .auth-slideshow {
-    position: relative; 
-  }
+}
 
-  /* Password Toggle Styles */
+.doc {
+    min-width: 49%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    .auth-slideshow {
+        display: none;
+    }
+
+    .doc {
+        margin: auto;
+    }
+}
+
+
+
+/* Password Toggle Styles */
 .password-group {
     position: relative;
 }
@@ -63,23 +91,9 @@
     padding-right: 40px !important;
 }
 
-.auth-slideshow {
-    flex: 1;
-    max-width: 49%;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out, box-shadow 0.15s ease;
-    margin: 2rem;
-    border-radius: 1.4rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.doc {
-    min-width: 49%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
+
 
 .auth-form {
     flex: 1;
@@ -170,7 +184,7 @@
 }
 
 .social-login {
-    margin-top: 2rem;
+    margin-top: auto;
 }
 
 .divider {
