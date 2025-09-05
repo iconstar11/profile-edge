@@ -220,20 +220,22 @@
 
 
 /* Advanced Features */
+/* Advanced Features Section */
 .advanced-features {
   text-align: center;
-  padding: 6rem 5%;
+  padding: 5rem 5%;
+  background: var(--bg-color);
 }
 
 .advanced-features .tag {
-  background: var(--primary-accent);
-  color: white;
-  padding: 0.3rem 1rem;
-  border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
+  color: var(--secondary-text-color);
   display: inline-block;
   margin-bottom: 1rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--card-hover-bg);
+  border-radius: 20px;
 }
 
 .advanced-features h2 {
@@ -241,9 +243,16 @@
   margin-bottom: 1rem;
 }
 
+.advanced-features h2 .highlight {
+  color: var(--primary-accent);
+}
+
 .advanced-features p {
   color: var(--secondary-text-color);
   margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .feature-grid.advanced {
@@ -254,6 +263,17 @@
 
 .feature-card {
   position: relative;
+  background: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: var(--card-hover-bg);
 }
 
 .feature-card .icon-box {
@@ -268,16 +288,54 @@
   margin-bottom: 1rem;
 }
 
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 1.5rem;
+}
+
 .feature-card .badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--card-hover-bg);
-  color: var(--text-color);
+  background: var(--secondary-accent);
+  color: white;
   font-size: 0.75rem;
   padding: 0.25rem 0.6rem;
   border-radius: 12px;
   font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .feature-grid.advanced {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-grid.advanced {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    text-align: center;
+  }
+
+  .feature-card .icon-box {
+    margin: 0 auto 1rem;
+  }
+
+  .feature-card .badge {
+    position: static;
+    display: inline-block;
+    margin-top: 1rem;
+  }
 }
 
 /* How It Works Section */
