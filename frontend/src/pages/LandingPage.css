@@ -5,6 +5,7 @@
   justify-content: space-between;
   padding: 4rem 5%;
   gap: 2rem;
+  height: calc(100vh - 80px);
 }
 
 .hero-content {
@@ -341,7 +342,7 @@
 /* How It Works Section */
 .how-it-works {
   padding: 80px 20px;
-  background: #f9f9f9;
+  background: var(--bg-color);
   text-align: center;
 }
 
@@ -401,12 +402,12 @@
 .step h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #222;
+  color: var(--secondary-text-color);
 }
 
 .step p {
   font-size: 0.95rem;
-  color: #666;
+  color: var(--secondary-text-color);
 }
 
 /* Responsive layout */
