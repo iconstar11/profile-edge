@@ -2,7 +2,7 @@ import React from "react";
 // import { CheckCircle } from "lucide-react";
 import { Shield, Zap, Download, BarChart, Target, FileText, Palette, Cpu, CheckCircle } from "lucide-react";
 import "./LandingPage.css";
-import Image from "../assets/landing_page.png";
+import Image from "../../assets/images/landing_page.png";
 
 const LandingPage = () => {
   return (
@@ -76,7 +76,7 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-
+      {/* Advanced Features Section */}
       <section className="advanced-features" id="how-it-works">
         <span className="tag">Features</span>
         <h2>

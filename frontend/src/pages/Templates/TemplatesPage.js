@@ -3,8 +3,8 @@ import TemplateFilters from './TemplateFilters';
 import TemplateCard from './TemplateCard';
 import TemplatePreviewModal from './TemplatePreviewModal';
 import styles from './templates.module.css';
-import image from '../../assets/pic_7.jpeg'
-import image1 from '../../assets/pic_6.jpeg'
+import image from '../../assets/images/pic_7.jpeg'
+import image1 from '../../assets/images/pic_6.jpeg'
 
 const TemplatesPage = () => {
   const [selectedTemplate, setSelectedTemplate] = useState(null);

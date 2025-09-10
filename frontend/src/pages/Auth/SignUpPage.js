@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../../firebase/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
-import image2 from '../../assets/login_pic1.jpg';
-import image1 from '../../assets/login_pic4.png';
-import image3 from '../../assets/login_pic2.png';
-import gitIcon from '../../assets/git_png.png';
-import googleIcon from '../../assets/google_png.png';
+import image2 from '../../assets/images/login_pic1.jpg';
+import image1 from '../../assets/images/login_pic4.png';
+import image3 from '../../assets/images/login_pic2.png';
+import gitIcon from '../../assets/logos/git_png.png';
+import googleIcon from '../../assets/logos/google_png.png';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import './SignUpPage.css';
 

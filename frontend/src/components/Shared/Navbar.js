@@ -3,7 +3,7 @@ import { AuthContext } from '../../firebase/AuthContext';
 import ThemeToggle from '../../utils/ThemeToggle';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../../assets/p_logo.png';
+import logo from '../../assets/logos/p_logo.png';
 
 
 function Navbar() {

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebaseConfig'; // Import Firebase auth
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Import signInWithEmailAndPassword
-import image2 from '../../assets/login_pic1.jpg';
-import image1 from '../../assets/login_pic2.png';
-import image3 from '../../assets/login_pic3.png';
-import gitIcon from '../../assets/git_png.png';
-import googleIcon from '../../assets/google_png.png';
+import image2 from '../../assets/images/login_pic1.jpg';
+import image1 from '../../assets/images/login_pic2.png';
+import image3 from '../../assets/images/login_pic3.png';
+import gitIcon from '../../assets/logos/git_png.png';
+import googleIcon from '../../assets/logos/google_png.png';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import './SignInPage.css'; // Use a separate CSS file for the Sign-In Page
 

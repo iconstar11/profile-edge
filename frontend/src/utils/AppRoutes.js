@@ -6,16 +6,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Components
 import Navbar from '../components/Shared/Navbar';
-import NotFoundPage from '../pages/NotFoundPage';
-import UploadPage from '../pages/UploadPage';
+import NotFoundPage from '../pages/NotFound/NotFoundPage';
+import UploadPage from '../pages/CV/UploadPage';
 import SignUpPage from '../pages/Auth/SignUpPage';
 import SignInPage from '../pages/Auth/SignInPage';
-import ResponsePage from '../pages/ResponsePage';
+import ResponsePage from '../pages/CV/ResponsePage';
 import TemplatesPage from '../pages/Templates/TemplatesPage';
-import Dashboard from '../pages/dashboard';
+import Dashboard from '../pages/Dashboard/dashboard';
 import PreviewPage from '../pages/Templates/PriviewPage/PreviewPage'
-import LandingPage from '../pages/LandingPage';
-import CreateCVPage from '../pages/CreateCVPage';
+import LandingPage from '../pages/Landing/LandingPage';
+import CreateCVPage from '../pages/CV/CreateCVPage';
 
 const AppRoutes = () => {
   return (
