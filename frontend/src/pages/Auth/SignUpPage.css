@@ -104,7 +104,7 @@
 .password-toggle {
     position: absolute;
     right: 12px;
-    top: 17%;
+    top: 50%;
     /* Adjust this value based on your input height */
     transform: translateY(-50%);
     /* rest of the styles remain the same */

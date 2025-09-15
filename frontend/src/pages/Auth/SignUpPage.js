@@ -28,7 +28,7 @@ function SignUpPage() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) => 
+            setCurrentImageIndex((prevIndex) =>
                 prevIndex === images.length - 1 ? 0 : prevIndex + 1
             );
         }, 5000); // Change image every 5 seconds
@@ -39,7 +39,7 @@ function SignUpPage() {
     // Password validation function
     const validatePassword = (value) => {
         const errors = [];
-        if (value.length < 8) errors.push("Password must be at least 8 characters long.");
+        if (value.length < 6) errors.push("Password must be at least 8 characters long.");
         if (!/[A-Z]/.test(value)) errors.push("Password must contain at least one uppercase letter.");
         if (!/[a-z]/.test(value)) errors.push("Password must contain at least one lowercase letter.");
         if (!/[0-9]/.test(value)) errors.push("Password must contain at least one number.");
@@ -101,10 +101,10 @@ function SignUpPage() {
 
     return (
         <div className="auth-container">
-            <div className="auth-slideshow" style={{ backgroundImage: `url(${images[currentImageIndex]})` }}> 
-    <Link to="/" className="back-to-website-btn">
-      Back to Website →
-    </Link></div>
+            <div className="auth-slideshow" style={{ backgroundImage: `url(${images[currentImageIndex]})` }}>
+                <Link to="/" className="back-to-website-btn">
+                    Back to Website →
+                </Link></div>
             <div className='doc'>
                 <div className="auth-form">
                     <h1>Create an account</h1>
@@ -115,7 +115,7 @@ function SignUpPage() {
                     {error && <p className="error-message">{error}</p>}
 
                     <form onSubmit={handleSubmit}>
-                    <div className="name-fields-row">
+                        <div className="name-fields-row">
                             <div className="form-group">
                                 <input
                                     type="text"
@@ -170,7 +170,8 @@ function SignUpPage() {
                             >
                                 {showPassword ? <FiEyeOff /> : <FiEye />}
                             </button>
-                            {passwordErrors.length > 0 && (
+                        </div>
+                                {passwordErrors.length > 0 && (
                                 <ul className="password-error-list">
                                     {passwordErrors.map((error, index) => (
                                         <li key={index} style={{ color: "red" }}>
@@ -182,11 +183,11 @@ function SignUpPage() {
                             {passwordErrors.length === 0 && password.length > 0 && (
                                 <p style={{ color: "green" }}>Password is strong!</p>
                             )}
-                        </div>
-
                         <div className="checkbox-group">
                             <input type="checkbox" id="terms" required />
-                            <label htmlFor="terms">I agree to the Terms & Conditions</label>
+                            <label htmlFor="terms">
+                                I agree to the <a href="/terms" target="_blank">Terms & Conditions</a>
+                            </label>
                         </div>
 
                         <button type="submit" className="create-account-btn" disabled={loading}>
