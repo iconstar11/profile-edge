@@ -82,10 +82,11 @@
 }
 
 .hero-image img {
+  transition: 0.3s ease;
   max-width: 500px;
   width: 100%;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 /* ========================= */
