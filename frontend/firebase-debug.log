@@ -1,13 +1,13 @@
-[debug] [2025-09-13T10:25:19.038Z] ----------------------------------------------------------------------
-[debug] [2025-09-13T10:25:19.051Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Local\Yarn\Data\global\node_modules\firebase-tools\lib\bin\firebase.js init emulators
-[debug] [2025-09-13T10:25:19.052Z] CLI Version:   13.29.1
-[debug] [2025-09-13T10:25:19.053Z] Platform:      win32
-[debug] [2025-09-13T10:25:19.054Z] Node Version:  v20.18.0
-[debug] [2025-09-13T10:25:19.054Z] Time:          Sat Sep 13 2025 13:25:19 GMT+0300 (Arabian Standard Time)
-[debug] [2025-09-13T10:25:19.055Z] ----------------------------------------------------------------------
+[debug] [2025-09-16T12:55:54.921Z] ----------------------------------------------------------------------
+[debug] [2025-09-16T12:55:54.924Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\premier\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-09-16T12:55:54.924Z] CLI Version:   14.16.0
+[debug] [2025-09-16T12:55:54.925Z] Platform:      win32
+[debug] [2025-09-16T12:55:54.925Z] Node Version:  v22.19.0
+[debug] [2025-09-16T12:55:54.925Z] Time:          Tue Sep 16 2025 15:55:54 GMT+0300 (East Africa Time)
+[debug] [2025-09-16T12:55:54.925Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-09-13T10:25:19.345Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-09-13T10:25:19.347Z] > authorizing via signed-in user (antonytitan96@gmail.com)
+[debug] [2025-09-16T12:55:55.122Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-16T12:55:55.123Z] > authorizing via signed-in user (antonytitan96@gmail.com)
 [info] 
      ######## #### ########  ######## ########     ###     ######  ########
      ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
@@ -17,7 +17,7 @@
 
 You're about to initialize a Firebase project in this directory:
 
-  C:\Users\HP\projects\javascript\profile-edge
+  C:\Users\premier\projects\profile-edge
 
 Before we get started, keep in mind:
 
@@ -30,29 +30,167 @@ Before we get started, keep in mind:
 [info] You can create multiple project aliases by running firebase use --add, 
 [info] but for now we'll just set up a default project.
 [info] 
-[debug] [2025-09-13T10:25:28.893Z] Using project from CLI flag: profile-edge-e5854
-[debug] [2025-09-13T10:25:28.896Z] Checked if tokens are valid: false, expires at: 1738337117046
-[debug] [2025-09-13T10:25:28.896Z] Checked if tokens are valid: false, expires at: 1738337117046
-[debug] [2025-09-13T10:25:28.897Z] > refreshing access token with scopes: []
-[debug] [2025-09-13T10:25:28.901Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2025-09-13T10:25:28.902Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2025-09-13T10:25:29.987Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
-[debug] [2025-09-13T10:25:29.987Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2025-09-13T10:25:29.989Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 [none]
-[debug] [2025-09-13T10:25:30.682Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 401
-[debug] [2025-09-13T10:25:30.683Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
-[debug] [2025-09-13T10:25:30.683Z] Got a 401 Unauthenticated error for a call that required authentication. Refreshing tokens.
-[debug] [2025-09-13T10:25:30.683Z] Checked if tokens are valid: false, expires at: 1738337117046
-[debug] [2025-09-13T10:25:30.684Z] Checked if tokens are valid: false, expires at: 1738337117046
-[debug] [2025-09-13T10:25:30.684Z] > refreshing access token with scopes: []
-[debug] [2025-09-13T10:25:30.685Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2025-09-13T10:25:30.685Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2025-09-13T10:25:30.986Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
-[debug] [2025-09-13T10:25:30.987Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2025-09-13T10:25:30.990Z] Request to https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 had HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
-[debug] [2025-09-13T10:25:31.456Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 had HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
-    at responseToError (C:\Users\HP\AppData\Local\Yarn\Data\global\node_modules\firebase-tools\lib\responseToError.js:52:12)
-    at RetryOperation._fn (C:\Users\HP\AppData\Local\Yarn\Data\global\node_modules\firebase-tools\lib\apiv2.js:312:77)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-[error] 
-[error] Error: Failed to get Firebase project profile-edge-e5854. Please make sure the project exists and your account has permission to access it.
+[debug] [2025-09-16T12:56:12.448Z] Using project from CLI flag: profile-edge-e5854
+[debug] [2025-09-16T12:56:12.449Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:12.449Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:12.450Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 [none]
+[debug] [2025-09-16T12:56:13.437Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 200
+[debug] [2025-09-16T12:56:13.438Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 {"projectId":"profile-edge-e5854","projectNumber":"755712020403","displayName":"Profile-Edge","name":"projects/profile-edge-e5854","resources":{"hostingSite":"profile-edge-e5854"},"state":"ACTIVE","etag":"1_2efa3fbd-27cc-4f84-8049-b326d74edaec"}
+[info] i  Using project profile-edge-e5854 (Profile-Edge) 
+[info] 
+=== Dataconnect Setup
+[debug] [2025-09-16T12:56:13.788Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:13.788Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:13.789Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/profile-edge-e5854/billingInfo [none]
+[debug] [2025-09-16T12:56:15.227Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/profile-edge-e5854/billingInfo 200
+[debug] [2025-09-16T12:56:15.227Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/profile-edge-e5854/billingInfo {"name":"projects/profile-edge-e5854/billingInfo","projectId":"profile-edge-e5854","billingAccountName":"","billingEnabled":false}
+[info] i  dataconnect: ensuring required API firebasedataconnect.googleapis.com is enabled... 
+[debug] [2025-09-16T12:56:15.228Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:15.228Z] Checked if tokens are valid: true, expires at: 1758030881670
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2025-09-16T12:56:15.229Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:15.229Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:15.229Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-16T12:56:15.229Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/profile-edge-e5854
+[debug] [2025-09-16T12:56:15.230Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/sqladmin.googleapis.com [none]
+[debug] [2025-09-16T12:56:15.230Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/sqladmin.googleapis.com x-goog-quota-user=projects/profile-edge-e5854
+[debug] [2025-09-16T12:56:16.437Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/sqladmin.googleapis.com 200
+[debug] [2025-09-16T12:56:16.437Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/sqladmin.googleapis.com [omitted]
+[warn] !  dataconnect: missing required API sqladmin.googleapis.com. Enabling now... 
+[debug] [2025-09-16T12:56:16.440Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:16.441Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:16.441Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/sqladmin.googleapis.com:enable [none]
+[debug] [2025-09-16T12:56:16.442Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/sqladmin.googleapis.com:enable x-goog-quota-user=projects/profile-edge-e5854
+[debug] [2025-09-16T12:56:16.459Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-16T12:56:16.460Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firebasedataconnect.googleapis.com [omitted]
+[warn] !  dataconnect: missing required API firebasedataconnect.googleapis.com. Enabling now... 
+[debug] [2025-09-16T12:56:16.461Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:16.462Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:56:16.462Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firebasedataconnect.googleapis.com:enable [none]
+[debug] [2025-09-16T12:56:16.462Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firebasedataconnect.googleapis.com:enable x-goog-quota-user=projects/profile-edge-e5854
+[debug] [2025-09-16T12:56:17.300Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/sqladmin.googleapis.com:enable 200
+[debug] [2025-09-16T12:56:17.300Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/sqladmin.googleapis.com:enable [omitted]
+[debug] [2025-09-16T12:56:17.612Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firebasedataconnect.googleapis.com:enable 200
+[debug] [2025-09-16T12:56:17.612Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firebasedataconnect.googleapis.com:enable [omitted]
+[debug] [2025-09-16T12:56:37.095Z] ----------------------------------------------------------------------
+[debug] [2025-09-16T12:56:37.097Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\premier\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-09-16T12:56:37.098Z] CLI Version:   14.16.0
+[debug] [2025-09-16T12:56:37.098Z] Platform:      win32
+[debug] [2025-09-16T12:56:37.098Z] Node Version:  v22.19.0
+[debug] [2025-09-16T12:56:37.098Z] Time:          Tue Sep 16 2025 15:56:37 GMT+0300 (East Africa Time)
+[debug] [2025-09-16T12:56:37.098Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-09-16T12:56:37.289Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-16T12:56:37.290Z] > authorizing via signed-in user (antonytitan96@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\premier\projects\profile-edge
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-09-16T12:57:28.086Z] Using project from CLI flag: profile-edge-e5854
+[debug] [2025-09-16T12:57:28.087Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:28.087Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:28.089Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 [none]
+[debug] [2025-09-16T12:57:29.042Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 200
+[debug] [2025-09-16T12:57:29.042Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/profile-edge-e5854 {"projectId":"profile-edge-e5854","projectNumber":"755712020403","displayName":"Profile-Edge","name":"projects/profile-edge-e5854","resources":{"hostingSite":"profile-edge-e5854"},"state":"ACTIVE","etag":"1_2efa3fbd-27cc-4f84-8049-b326d74edaec"}
+[info] i  Using project profile-edge-e5854 (Profile-Edge) 
+[info] 
+=== Firestore Setup
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2025-09-16T12:57:29.394Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:29.395Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:29.395Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firestore.googleapis.com [none]
+[debug] [2025-09-16T12:57:29.395Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firestore.googleapis.com x-goog-quota-user=projects/profile-edge-e5854
+[debug] [2025-09-16T12:57:30.351Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firestore.googleapis.com 200
+[debug] [2025-09-16T12:57:30.351Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/firestore.googleapis.com [omitted]
+[info] +  firestore: required API firestore.googleapis.com is enabled 
+[debug] [2025-09-16T12:57:30.356Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:30.356Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:30.357Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/profile-edge-e5854/databases [none]
+[debug] [2025-09-16T12:57:31.893Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/profile-edge-e5854/databases 200
+[debug] [2025-09-16T12:57:31.894Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/profile-edge-e5854/databases {"databases":[{"name":"projects/profile-edge-e5854/databases/(default)","uid":"292faa19-d2a6-4c85-b2fe-609bf78629c5","createTime":"2025-01-24T11:32:56.883280Z","updateTime":"2025-01-24T11:32:56.883280Z","locationId":"eur3","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2025-09-16T11:57:32.024930Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"e","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"etag":"IJKuis6q3Y8DMI6P5IvFqowD"}]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-09-16T12:57:31.895Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:31.895Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:31.895Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/profile-edge-e5854/releases pageSize=10&pageToken=
+[debug] [2025-09-16T12:57:32.975Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/profile-edge-e5854/releases 200
+[debug] [2025-09-16T12:57:32.975Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/profile-edge-e5854/releases {"releases":[{"name":"projects/profile-edge-e5854/releases/cloud.firestore","rulesetName":"projects/profile-edge-e5854/rulesets/2d17f0a2-1fdf-465f-ac10-86a88cdd4e74","createTime":"2025-01-24T11:33:01.696933Z","updateTime":"2025-02-02T17:03:05.103074Z"}]}
+[debug] [2025-09-16T12:57:32.976Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:32.976Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:32.977Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/profile-edge-e5854/rulesets/2d17f0a2-1fdf-465f-ac10-86a88cdd4e74 [none]
+[debug] [2025-09-16T12:57:33.348Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/profile-edge-e5854/rulesets/2d17f0a2-1fdf-465f-ac10-86a88cdd4e74 200
+[debug] [2025-09-16T12:57:33.348Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/profile-edge-e5854/rulesets/2d17f0a2-1fdf-465f-ac10-86a88cdd4e74 [omitted]
+[info] i  Downloaded the existing Firestore Security Rules from the Firebase console 
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-09-16T12:57:39.938Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:39.938Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:39.938Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:39.938Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:39.938Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/profile-edge-e5854/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2025-09-16T12:57:39.940Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/profile-edge-e5854/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2025-09-16T12:57:41.013Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/profile-edge-e5854/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2025-09-16T12:57:41.014Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/profile-edge-e5854/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/profile-edge-e5854/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2025-09-16T12:57:41.014Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/profile-edge-e5854/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2025-09-16T12:57:41.014Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/profile-edge-e5854/databases/(default)/collectionGroups/-/indexes {}
+[info] i  Downloaded the existing Firestore indexes from the Firebase console 
+[info] +  Wrote firestore.rules 
+[info] +  Wrote firestore.indexes.json 
+[info] 
+=== Functions Setup
+[debug] [2025-09-16T12:57:41.362Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-16T12:57:41.363Z] > authorizing via signed-in user (antonytitan96@gmail.com)
+[debug] [2025-09-16T12:57:41.363Z] [iam] checking project profile-edge-e5854 for permissions ["firebase.projects.get"]
+[debug] [2025-09-16T12:57:41.364Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:41.365Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:41.365Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/profile-edge-e5854:testIamPermissions [none]
+[debug] [2025-09-16T12:57:41.365Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/profile-edge-e5854:testIamPermissions x-goog-quota-user=projects/profile-edge-e5854
+[debug] [2025-09-16T12:57:41.365Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/profile-edge-e5854:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-09-16T12:57:43.109Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/profile-edge-e5854:testIamPermissions 200
+[debug] [2025-09-16T12:57:43.109Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/profile-edge-e5854:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-09-16T12:57:43.110Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:43.110Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:43.110Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:43.110Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:43.111Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-09-16T12:57:43.111Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/profile-edge-e5854
+[debug] [2025-09-16T12:57:43.114Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-09-16T12:57:43.115Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/profile-edge-e5854
+[debug] [2025-09-16T12:57:44.264Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/runtimeconfig.googleapis.com 200
+[debug] [2025-09-16T12:57:44.264Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-09-16T12:57:44.274Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/cloudfunctions.googleapis.com 200
+[debug] [2025-09-16T12:57:44.274Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2025-09-16T12:57:44.274Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:44.274Z] Checked if tokens are valid: true, expires at: 1758030881670
+[debug] [2025-09-16T12:57:44.274Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2025-09-16T12:57:44.274Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/profile-edge-e5854
+[debug] [2025-09-16T12:57:45.136Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2025-09-16T12:57:45.136Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/profile-edge-e5854/services/cloudfunctions.googleapis.com:enable [omitted]
+[info] 
+Detected existing codebase(s): default
+

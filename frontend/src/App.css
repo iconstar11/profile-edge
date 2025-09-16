@@ -76,6 +76,7 @@ small {
   --secondary-accent-hover: #ffb300;
   --error-color: #ff4444;
   --disabled-bg: #cccccc;
+  --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
@@ -88,6 +89,7 @@ small {
   --card-hover-bg: #2A2A2A;
   --error-color: #ff6666;
   --disabled-bg: #444444;
+  --shadow-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Buttons */

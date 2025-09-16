@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import { Shield, Zap, Download, BarChart, Target, FileText, Palette, Cpu, CheckCircle } from "lucide-react";
 import "./LandingPage.css";
 import Image from "../../assets/images/landing_page.png";
-import Image1 from "../../assets/images/landing_dark.png";
+import darkImage from "../../assets/images/landing_dark.png";
 
 const LandingPage = () => {
 
@@ -44,7 +44,7 @@ const LandingPage = () => {
         </div>
 
         <div className="hero-image">
-          <img src={theme === 'dark'? Image1 : Image} alt="AI CV Builder" />
+          <img src={theme === 'dark'? darkImage : Image} alt="AI CV Builder" className="hero-png"/>
         </div>
       </section>
 
