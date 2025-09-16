@@ -1,10 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 // import { CheckCircle } from "lucide-react";
 import { Shield, Zap, Download, BarChart, Target, FileText, Palette, Cpu, CheckCircle } from "lucide-react";
 import "./LandingPage.css";
 import Image from "../../assets/images/landing_page.png";
+import Image1 from "../../assets/images/landing_dark.png";
 
 const LandingPage = () => {
+
+  const [theme, setTheme] = useState(document.documentElement.getAttribute('data-theme') || 'light');
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setTheme(document.documentElement.getAttribute('data-theme'));
+    });
+
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <div className="landing-page">
 
@@ -31,7 +44,7 @@ const LandingPage = () => {
         </div>
 
         <div className="hero-image">
-          <img src={Image} alt="AI CV Builder" />
+          <img src={theme === 'dark'? Image1 : Image} alt="AI CV Builder" />
         </div>
       </section>
 
