@@ -101,3 +101,27 @@
     align-items: center;
     gap: 1rem;
 }
+
+/* ===== NAV LINKS (when logged in) ===== */
+.nav-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.nav-links .auth-link {
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    background: var(--card-bg-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-links .auth-link:hover {
+    background: var(--card-hover-bg);
+}
