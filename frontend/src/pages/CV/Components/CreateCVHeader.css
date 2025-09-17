@@ -9,7 +9,7 @@
     flex-wrap: wrap;
 }
 
-.step {
+.progress-steps .step {
     padding: 8px 14px;
     border-radius: 20px;
     background: var(--card-hover-bg);
@@ -17,32 +17,32 @@
     color: var(--secondary-text-color);
 }
 
-.step.active {
+.progress-steps .step.active {
     background: rgba(76, 175, 80, 0.1);
     /* primary-accent soft */
     color: var(--primary-accent);
     font-weight: 600;
 }
 
-.divider {
+.progress-steps .divider {
     flex: 0 0 30px;
     height: 2px;
     background: var(--border-color);
 }
 
-.step.clickable {
+.progress-steps .step.clickable {
     cursor: pointer;
     background: var(--card-bg);
     transition: background 0.2s ease;
 }
 
-.step.clickable:hover {
+.progress-steps .step.clickable:hover {
     background: var(--card-hover-bg);
     color: var(--primary-accent);
 }
 
 @media (max-width: 740px) {
-    .divider {
+    .progress-steps .divider {
         display: none;
     }
 }

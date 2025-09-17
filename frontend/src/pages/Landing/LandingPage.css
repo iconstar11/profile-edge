@@ -383,7 +383,7 @@
   max-width: 250px;
   padding: 20px;
   border-radius: 12px;
-  background: #fff;
+  background: var(--card-bg-color);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
