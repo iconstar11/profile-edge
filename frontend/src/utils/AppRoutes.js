@@ -16,6 +16,7 @@ import PreviewPage from '../pages/Templates/PriviewPage/PreviewPage';
 import LandingPage from '../pages/Landing/LandingPage';
 import CreateCVPage from '../pages/CV/CreateCVPage';
 import PrivateRoute from './PrivateRoute';
+import StartFreshPage from '../pages/CV/Components/StartFreshPage';
 
 const AppRoutes = () => {
   return (
@@ -33,7 +34,9 @@ const AppRoutes = () => {
           <Route path="/upload" element={<UploadPage />} />
           <Route path="/response" element={<ResponsePage />} />
           <Route path="/resumetemplates" element={<TemplatesPage />} />
-          <Route path="preview" element={<PreviewPage />} />  
+          <Route path="preview" element={<PreviewPage />} />
+          <Route path="/start-fresh" element={<StartFreshPage />} />
+  
 
           {/* Protected Routes */}
           <Route 

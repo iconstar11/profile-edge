@@ -1,8 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./CreateCVPage.css";
 import { Upload, FileText, Sparkles } from "lucide-react";
 
 const CreateCVPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="create-cv-page">
       {/* Step Progress */}
@@ -48,7 +52,7 @@ const CreateCVPage = () => {
             <li>Work experience</li>
             <li>Education & skills</li>
           </ul>
-          <button className="btn-primary">Start Fresh</button>
+          <button className="btn-primary" onClick={() => navigate("/start-fresh")}>Start Fresh</button>
         </div>
 
         {/* AI Interview */}
