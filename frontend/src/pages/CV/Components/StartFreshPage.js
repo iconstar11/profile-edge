@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./StartFreshPage.css"; // create a CSS file later
 import { useNavigate } from "react-router-dom";
+import CreateCVHeader from "./CreateCVHeader";
 
 const StartFreshPage = () => {
   const navigate = useNavigate();
@@ -11,15 +12,8 @@ const StartFreshPage = () => {
   return (
     <div className="start-fresh-page">
       {/* Progress Steps */}
-      <div className="progress-steps">
-        <div className="step completed" onClick={() => navigate("/")}>
-          1 Choose Option
-        </div>
-        <div className="divider" />
-        <div className="step active">2 Edit & Customize</div>
-        <div className="divider" />
-        <div className="step">3 Preview & Export</div>
-      </div>
+      <CreateCVHeader activeStep={2} />
+
 
       <div className="main-content">
         {/* Left side form */}

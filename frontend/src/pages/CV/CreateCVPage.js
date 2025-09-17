@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./CreateCVPage.css";
 import { Upload, FileText, Sparkles } from "lucide-react";
+import CreateCVHeader from "./Components/CreateCVHeader";
 
 const CreateCVPage = () => {
   const navigate = useNavigate();
@@ -10,13 +11,8 @@ const CreateCVPage = () => {
   return (
     <div className="create-cv-page">
       {/* Step Progress */}
-      <div className="progress-steps">
-        <div className="step active">1 Choose Option</div>
-        <div className="divider" />
-        <div className="step">2 Edit & Customize</div>
-        <div className="divider" />
-        <div className="step">3 Preview & Export</div>
-      </div>
+      <CreateCVHeader activeStep={1} />
+
 
       {/* Header */}
       <div className="create-cv-header">

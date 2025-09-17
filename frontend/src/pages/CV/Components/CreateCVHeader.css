@@ -1,0 +1,48 @@
+.progress-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--secondary-text-color);
+    flex-wrap: wrap;
+}
+
+.step {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: var(--card-hover-bg);
+    font-weight: 500;
+    color: var(--secondary-text-color);
+}
+
+.step.active {
+    background: rgba(76, 175, 80, 0.1);
+    /* primary-accent soft */
+    color: var(--primary-accent);
+    font-weight: 600;
+}
+
+.divider {
+    flex: 0 0 30px;
+    height: 2px;
+    background: var(--border-color);
+}
+
+.step.clickable {
+    cursor: pointer;
+    background: var(--card-bg);
+    transition: background 0.2s ease;
+}
+
+.step.clickable:hover {
+    background: var(--card-hover-bg);
+    color: var(--primary-accent);
+}
+
+@media (max-width: 740px) {
+    .divider {
+        display: none;
+    }
+}
