@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
-    background: var(--card-bg-color);
+    background: var(--bg-color);
 }
 
 .start-fresh-page .editor-panel,
@@ -148,4 +148,98 @@
         flex-direction: column;
         align-items: stretch;
     }
+}
+
+
+/* --- Form Layout --- */
+.start-fresh-page .form-section {
+    margin-bottom: 2rem;
+}
+
+.start-fresh-page .form-section h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+/* --- Grid for Inputs --- */
+.start-fresh-page .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+/* --- Input Styles --- */
+.start-fresh-page input[type="text"],
+.start-fresh-page input[type="email"],
+.start-fresh-page input[type="tel"],
+.start-fresh-page input[type="date"],
+.start-fresh-page textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.start-fresh-page input:focus,
+.start-fresh-page textarea:focus {
+    border-color: var(--primary-accent);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.1);
+}
+
+/* --- Textarea (Full Width) --- */
+.start-fresh-page .form-grid.full-width {
+    grid-template-columns: 1fr;
+}
+
+.start-fresh-page textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* --- Add Button (Experience/Education/Skills) --- */
+.start-fresh-page .add-btn {
+    background: var(--primary-accent);
+    color: #fff;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s ease;
+}
+
+.start-fresh-page .add-btn:hover {
+    background: var(--primary-accent-hover);
+}
+
+/* --- Skills Section --- */
+.start-fresh-page .skills-input {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.start-fresh-page .skills-input input {
+    flex: 1;
+}
+
+/* --- Remove Icon (Experience/Education cards) --- */
+.start-fresh-page .remove-btn {
+    background: transparent;
+    border: none;
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.start-fresh-page .remove-btn:hover {
+    color: var(--danger-color, #e74c3c);
 }

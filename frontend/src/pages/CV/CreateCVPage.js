@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import "./CreateCVPage.css";
 import { Upload, FileText, Sparkles } from "lucide-react";
-import CreateCVHeader from "./Components/CreateCVHeader";
+import CreateCVHeader from "../../components/CreateCVHeader";
+
 
 const CreateCVPage = () => {
   const navigate = useNavigate();

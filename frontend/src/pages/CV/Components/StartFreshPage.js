@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./StartFreshPage.css"; // create a CSS file later
 import { useNavigate } from "react-router-dom";
-import CreateCVHeader from "./CreateCVHeader";
+import CreateCVHeader from "../../../components/CreateCVHeader";
+import CVPreview from "../../../components/Preview/CVPreview";
+import SkillsForm from "../../../components/Forms/SkillsForm";
 
 const StartFreshPage = () => {
   const navigate = useNavigate();
@@ -45,27 +47,40 @@ const StartFreshPage = () => {
           </div>
 
           {/* Tab Content */}
+          {/* Tab Content */}
           <div className="tab-content">
-            {activeTab === "personal" && <p>Personal Info Form here</p>}
+            {activeTab === "personal" && (
+              <div className="form-section">
+                <h4>Personal Info</h4>
+                <input type="text" placeholder="Full Name" />
+                <input type="email" placeholder="Email" />
+                <input type="tel" placeholder="Phone" />
+                <input type="text" placeholder="Location" />
+                <textarea placeholder="Summary / About You" rows="3"></textarea>
+              </div>
+            )}
+
             {activeTab === "experience" && (
-              <div>
+              <div className="form-section">
                 <h4>Work Experience</h4>
+                {/* Dynamic list of experiences goes here */}
                 <button className="add-btn">+ Add Experience</button>
               </div>
             )}
+
             {activeTab === "education" && (
-              <div>
+              <div className="form-section">
                 <h4>Education</h4>
+                {/* Dynamic list of education entries goes here */}
                 <button className="add-btn">+ Add Education</button>
               </div>
             )}
+
             {activeTab === "skills" && (
-              <div>
-                <h4>Skills</h4>
-                <button className="add-btn">+ Add Skill</button>
-              </div>
+<SkillsForm />
             )}
           </div>
+
 
           {/* Navigation Buttons */}
           <div className="actions">
@@ -79,13 +94,8 @@ const StartFreshPage = () => {
         </div>
 
         {/* Right side preview */}
-        <div className="preview-panel">
-          <h3>CV Preview</h3>
-          <div className="preview-box">
-            <p className="preview-name">Your Name</p>
-            <p className="preview-placeholder">[Template Preview Here]</p>
-          </div>
-        </div>
+        <CVPreview />
+        
       </div>
     </div>
   );
