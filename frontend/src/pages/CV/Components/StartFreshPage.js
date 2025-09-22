@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./StartFreshPage.css"; 
+import "./StartFreshPage.css";
 import { useNavigate } from "react-router-dom";
 
 // Components
@@ -15,12 +15,12 @@ const StartFreshPage = () => {
 
   // Track which tab is active
   const [activeTab, setActiveTab] = useState("experience");
+  const [personalInfo, setPersonalInfo] = useState({});
 
   return (
     <div className="start-fresh-page">
       {/* Progress Steps */}
       <CreateCVHeader activeStep={2} />
-
 
       <div className="main-content">
         {/* Left side form */}
@@ -53,19 +53,10 @@ const StartFreshPage = () => {
 
           {/* Tab Content */}
           <div className="tab-content">
-            {activeTab === "personal" && (
-              <PersonalForm />
-            )}
-
-            {activeTab === "experience" && (
-              <ExperienceForm />
-            )}
-
-            {activeTab === "education" && (
-              <EducationForm />
-            )}
-
-            {activeTab === "skills" && ( <SkillsForm /> )}
+            {activeTab === "personal" && (<PersonalForm personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} />)}
+            {activeTab === "experience" && (<ExperienceForm />)}
+            {activeTab === "education" && (<EducationForm />)}
+            {activeTab === "skills" && (<SkillsForm />)}
           </div>
 
 
@@ -81,7 +72,7 @@ const StartFreshPage = () => {
         </div>
 
         {/* Right side preview */}
-        <CVPreview />
+        <CVPreview personalInfo={personalInfo}/>
 
       </div>
     </div>
