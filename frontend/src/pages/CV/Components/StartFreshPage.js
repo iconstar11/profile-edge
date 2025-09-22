@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CreateCVHeader from "../../../components/CreateCVHeader";
 import CVPreview from "../../../components/Preview/CVPreview";
 import SkillsForm from "../../../components/Forms/SkillsForm";
+import PersonalForm from "../../../components/Forms/PersonalForm";
 
 const StartFreshPage = () => {
   const navigate = useNavigate();
@@ -47,17 +48,9 @@ const StartFreshPage = () => {
           </div>
 
           {/* Tab Content */}
-          {/* Tab Content */}
           <div className="tab-content">
             {activeTab === "personal" && (
-              <div className="form-section">
-                <h4>Personal Info</h4>
-                <input type="text" placeholder="Full Name" />
-                <input type="email" placeholder="Email" />
-                <input type="tel" placeholder="Phone" />
-                <input type="text" placeholder="Location" />
-                <textarea placeholder="Summary / About You" rows="3"></textarea>
-              </div>
+              <PersonalForm />
             )}
 
             {activeTab === "experience" && (
@@ -77,7 +70,7 @@ const StartFreshPage = () => {
             )}
 
             {activeTab === "skills" && (
-<SkillsForm />
+              <SkillsForm />
             )}
           </div>
 
@@ -95,7 +88,7 @@ const StartFreshPage = () => {
 
         {/* Right side preview */}
         <CVPreview />
-        
+
       </div>
     </div>
   );

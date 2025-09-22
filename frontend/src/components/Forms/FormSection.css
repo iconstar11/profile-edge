@@ -1,0 +1,11 @@
+/* --- Personal Form Layout --- */
+.start-fresh-page .personal-form .form-section {
+    margin-bottom: 2rem;
+}
+
+.start-fresh-page .personal-form .form-section h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}

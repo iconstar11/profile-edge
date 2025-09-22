@@ -119,7 +119,6 @@
     background: var(--primary-accent-hover);
 }
 
-/* --- Preview --- */
 
 
 /* --- Responsive --- */
@@ -135,17 +134,7 @@
 }
 
 
-/* --- Form Layout --- */
-.start-fresh-page .form-section {
-    margin-bottom: 2rem;
-}
 
-.start-fresh-page .form-section h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-}
 
 /* --- Grid for Inputs --- */
 .start-fresh-page .form-grid {
