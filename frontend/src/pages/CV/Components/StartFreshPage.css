@@ -84,18 +84,7 @@
     margin-bottom: 1.5rem;
 }
 
-.start-fresh-page .add-btn {
-    background: var(--card-hover-bg);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 0.75rem;
-    color: var(--text-color);
-}
 
-.start-fresh-page .add-btn:hover {
-    background: var(--border-color);
-}
 
 /* --- Actions --- */
 .start-fresh-page .actions {
@@ -176,21 +165,9 @@
 }
 
 /* --- Add Button (Experience/Education/Skills) --- */
-.start-fresh-page .add-btn {
-    background: var(--primary-accent);
-    color: #fff;
-    font-weight: 500;
-    border-radius: 6px;
-    padding: 0.6rem 1rem;
-    margin-top: 1rem;
-    cursor: pointer;
-    border: none;
-    transition: background 0.2s ease;
-}
 
-.start-fresh-page .add-btn:hover {
-    background: var(--primary-accent-hover);
-}
+
+
 
 /* --- Skills Section --- */
 .start-fresh-page .skills-input {

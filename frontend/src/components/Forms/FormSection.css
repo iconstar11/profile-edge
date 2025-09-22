@@ -1,11 +1,28 @@
 /* --- Personal Form Layout --- */
-.start-fresh-page .personal-form .form-section {
+.start-fresh-page .form-section {
     margin-bottom: 2rem;
 }
 
-.start-fresh-page .personal-form .form-section h4 {
+.start-fresh-page .form-section h4 {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-color);
+}
+
+
+
+.start-fresh-page .add-btn {
+    background: var(--card-hover-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    color: var(--text-color);
+}
+
+
+.start-fresh-page .add-btn:hover {
+    background: var(--primary-accent-hover);
+    color: #fff;
 }

@@ -5,6 +5,8 @@ import CreateCVHeader from "../../../components/CreateCVHeader";
 import CVPreview from "../../../components/Preview/CVPreview";
 import SkillsForm from "../../../components/Forms/SkillsForm";
 import PersonalForm from "../../../components/Forms/PersonalForm";
+import ExperienceForm from "../../../components/Forms/ExperienceForm";
+import EducationForm from "../../../components/Forms/EducationForm";
 
 const StartFreshPage = () => {
   const navigate = useNavigate();
@@ -54,19 +56,11 @@ const StartFreshPage = () => {
             )}
 
             {activeTab === "experience" && (
-              <div className="form-section">
-                <h4>Work Experience</h4>
-                {/* Dynamic list of experiences goes here */}
-                <button className="add-btn">+ Add Experience</button>
-              </div>
+              <ExperienceForm />
             )}
 
             {activeTab === "education" && (
-              <div className="form-section">
-                <h4>Education</h4>
-                {/* Dynamic list of education entries goes here */}
-                <button className="add-btn">+ Add Education</button>
-              </div>
+              <EducationForm />
             )}
 
             {activeTab === "skills" && (
