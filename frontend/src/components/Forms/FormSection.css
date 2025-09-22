@@ -1,4 +1,35 @@
-/* --- Personal Form Layout --- */
+/* --- Form Layout --- */
+/* --- Input Styles --- */
+.start-fresh-page input[type="text"],
+.start-fresh-page input[type="email"],
+.start-fresh-page input[type="tel"],
+.start-fresh-page input[type="date"],
+.start-fresh-page textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.start-fresh-page input:focus,
+.start-fresh-page textarea:focus {
+    border-color: var(--primary-accent);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.1);
+}
+
+/* --- Textarea (Full Width) --- */
+
+.start-fresh-page textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+/* ---------  */
 .start-fresh-page .form-section {
     margin-bottom: 2rem;
 }
@@ -10,8 +41,7 @@
     color: var(--text-color);
 }
 
-
-
+/* --- Add Button (Experience/Education/Skills) --- */
 .start-fresh-page .add-btn {
     background: var(--card-hover-bg);
     padding: 0.5rem 1rem;
@@ -21,8 +51,18 @@
     color: var(--text-color);
 }
 
-
 .start-fresh-page .add-btn:hover {
     background: var(--primary-accent-hover);
     color: #fff;
+}
+
+/* --- Skills Section --- */
+.start-fresh-page .skills-input {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.start-fresh-page .skills-input input {
+    flex: 1;
 }

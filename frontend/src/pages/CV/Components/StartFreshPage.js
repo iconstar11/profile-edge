@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import "./StartFreshPage.css"; // create a CSS file later
+import "./StartFreshPage.css"; 
 import { useNavigate } from "react-router-dom";
+
+// Components
 import CreateCVHeader from "../../../components/CreateCVHeader";
 import CVPreview from "../../../components/Preview/CVPreview";
 import SkillsForm from "../../../components/Forms/SkillsForm";
@@ -63,9 +65,7 @@ const StartFreshPage = () => {
               <EducationForm />
             )}
 
-            {activeTab === "skills" && (
-              <SkillsForm />
-            )}
+            {activeTab === "skills" && ( <SkillsForm /> )}
           </div>
 
 
