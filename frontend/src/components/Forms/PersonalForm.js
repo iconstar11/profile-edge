@@ -1,21 +1,48 @@
-import React from 'react'
-import './FormSection.css'
+import React from "react";
+import "./FormSection.css";
 
 function PersonalForm() {
-    return (
-        <div className='personal-form'>
-            <div className="form-section">
-                <h4>Personal Info</h4>
-                <div className=''>
-                <input type="text" placeholder="Full Name" />
-                <input type="email" placeholder="Email" />
-                <input type="tel" placeholder="Phone" />
-                <input type="text" placeholder="Location" />
-                </div>
-                <textarea placeholder="Summary / About You" rows="3"></textarea>
-            </div>
+  return (
+    <div className="form-section">
+      <h4>Personal Information</h4>
+      <div className="form-grid">
+        <div className="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="John Doe" />
         </div>
-    )
+
+        <div className="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="john@example.com" />
+        </div>
+
+        <div className="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="+1 (555) 123-4567" />
+        </div>
+
+        <div className="form-group">
+          <label>Location</label>
+          <input type="text" placeholder="New York, NY" />
+        </div>
+
+        <div className="form-group">
+          <label>LinkedIn</label>
+          <input type="text" placeholder="linkedin.com/in/johndoe" />
+        </div>
+
+        <div className="form-group">
+          <label>Website</label>
+          <input type="text" placeholder="johndoe.dev" />
+        </div>
+
+        <div className="form-group full-width">
+          <label>Professional Summary</label>
+          <textarea placeholder="Brief overview of your professional background..." rows="4"></textarea>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default PersonalForm
+export default PersonalForm;
