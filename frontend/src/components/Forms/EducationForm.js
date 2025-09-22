@@ -8,13 +8,13 @@ function EducationForm() {
   const handleAddEducation = () => {
     setEducationList([
       ...educationList,
-      { 
-        level: '', 
-        degree: '', 
-        school: '', 
-        location: '', 
-        graduationDate: '', 
-        id: Date.now() 
+      {
+        level: '',
+        degree: '',
+        school: '',
+        location: '',
+        graduationDate: '',
+        id: Date.now()
       }
     ]);
   };
@@ -36,10 +36,12 @@ function EducationForm() {
   // Helper to map level -> degree label
   const getDegreeLabel = (level) => {
     switch (level) {
-      case 'Diploma': return 'Diploma Title';
+      case 'Certificate': return 'Certificate'
+      case 'Diploma': return 'Diploma';
       case 'Bachelor': return 'Bachelor Degree';
       case 'Master': return 'Master Degree';
       case 'PhD': return 'PhD Program';
+
       default: return 'Degree';
     }
   };
@@ -47,7 +49,12 @@ function EducationForm() {
   return (
     <div className="education-form">
       <div className="form-section">
-        <h4>Education</h4>
+        <div className="section-header">
+          <h4>Education</h4>
+          <button className="add-btn" onClick={handleAddEducation}>
+            + Add Education
+          </button>
+        </div>
 
         {educationList.map((edu) => (
           <div key={edu.id} className="experience-card">
@@ -66,8 +73,8 @@ function EducationForm() {
                   value={edu.level}
                   onChange={(e) => handleChange(edu.id, 'level', e.target.value)}
                 >
-                  <option value='Certificate'>Certificate</option>
                   <option value="">Select Level</option>
+                  <option value='Certificate'>Certificate</option>
                   <option value="Diploma">Diploma</option>
                   <option value="Bachelor">Bachelor</option>
                   <option value="Master">Master</option>
@@ -129,9 +136,7 @@ function EducationForm() {
           </div>
         ))}
 
-        <button className="add-btn" onClick={handleAddEducation}>
-          + Add Education
-        </button>
+
       </div>
     </div>
   );

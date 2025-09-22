@@ -8,12 +8,13 @@ function SkillsForm() {
                 <h4>Skills</h4>
                 <div className="skills-input">
                     <input type="text" placeholder="Enter a skill" />
-                    <button className="add-btn">+ Add Skill</button>
+                    <button className="add-btn skill-add">+ Add Skill</button>
+                    <button className="optimize-bttn">✨ Get AI Suggestions</button>
                 </div>
                 <div className="skills-list">
                     {/* Skills will appear as chips here */}
                 </div>
-                <button className="optimize-btn">✨ Get AI Suggestions</button>
+                
             </div>
         </div>
     )

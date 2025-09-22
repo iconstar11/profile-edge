@@ -140,6 +140,21 @@
     flex: 1;
 }
 
+.start-fresh-page .optimize-bttn {
+    background: var(--card-hover-bg);
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.start-fresh-page .optimize-bttn:hover {
+    background: var(--secondary-accent-hover);
+}
+
+.start-fresh-page .skill-add {
+    margin-top: 0px;
+}
+
 
 /* ================================
    --- Experience Cards ---
