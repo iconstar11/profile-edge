@@ -1,5 +1,8 @@
-/* --- Form Layout --- */
-/* --- Input Styles --- */
+/* ================================
+   --- Base Form Styles ---
+================================ */
+
+/* Inputs & textareas */
 .start-fresh-page input[type="text"],
 .start-fresh-page input[type="email"],
 .start-fresh-page input[type="tel"],
@@ -14,6 +17,7 @@
     color: var(--text-color);
 }
 
+/* Focused state for inputs */
 .start-fresh-page input:focus,
 .start-fresh-page textarea:focus {
     border-color: var(--primary-accent);
@@ -21,15 +25,18 @@
     box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.1);
 }
 
-/* --- Textarea (Full Width) --- */
-
+/* Textarea full width */
 .start-fresh-page textarea {
     resize: vertical;
     min-height: 100px;
 }
 
 
-/* --- Shared Grid Layout for Forms --- */
+/* ================================
+   --- Grid Layout ---
+================================ */
+
+/* 2-column layout for forms */
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -37,7 +44,7 @@
     /* row gap / col gap */
 }
 
-/* Full-width rows like textarea */
+/* Full-width rows (e.g., textarea) */
 .form-group.full-width {
     grid-column: 1 / -1;
 }
@@ -51,7 +58,7 @@
     color: var(--text-color);
 }
 
-/* Input styling (reuse your base) */
+/* Inherit base styles for grouped inputs */
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -63,7 +70,7 @@
     color: var(--text-color);
 }
 
-/* Focus state */
+/* Focus state for grouped fields */
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--primary-accent);
@@ -71,14 +78,17 @@
     box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.1);
 }
 
-/* Responsive: stack fields on small screens */
+/* Responsive: collapse grid to single column */
 @media (max-width: 740px) {
     .form-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* ---------  */
+
+/* ================================
+   --- Section Headings ---
+================================ */
 .start-fresh-page .form-section {
     margin-bottom: 2rem;
 }
@@ -90,7 +100,18 @@
     color: var(--text-color);
 }
 
-/* --- Add Button (Experience/Education/Skills) --- */
+/* Header layout with title + button */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
+/* ================================
+   --- Add Button (Experience/Education/Skills) ---
+================================ */
 .start-fresh-page .add-btn {
     background: var(--card-hover-bg);
     padding: 0.5rem 1rem;
@@ -105,7 +126,10 @@
     color: #fff;
 }
 
-/* --- Skills Section --- */
+
+/* ================================
+   --- Skills Section ---
+================================ */
 .start-fresh-page .skills-input {
     display: flex;
     gap: 0.75rem;
@@ -114,4 +138,41 @@
 
 .start-fresh-page .skills-input input {
     flex: 1;
+}
+
+
+/* ================================
+   --- Experience Cards ---
+================================ */
+.experience-card {
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    background: var(--card-bg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Remove button inside cards */
+.experience-card .remove-btn {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1;
+    padding: 0.25rem 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.experience-card .remove-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
 }
