@@ -17,6 +17,7 @@ const StartFreshPage = () => {
   const [activeTab, setActiveTab] = useState("experience");
   const [personalInfo, setPersonalInfo] = useState({});
   const [experiences, setExperiences] = useState([]);
+  const [educationList, setEducationList] = useState([]);
 
   return (
     <div className="start-fresh-page">
@@ -56,7 +57,7 @@ const StartFreshPage = () => {
           <div className="tab-content">
             {activeTab === "personal" && (<PersonalForm personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} />)}
             {activeTab === "experience" && (<ExperienceForm experiences={experiences} setExperiences={setExperiences}/>)}
-            {activeTab === "education" && (<EducationForm />)}
+            {activeTab === "education" && (<EducationForm educationList={educationList} setEducationList={setEducationList}/>)}
             {activeTab === "skills" && (<SkillsForm />)}
           </div>
 
@@ -73,7 +74,7 @@ const StartFreshPage = () => {
         </div>
 
         {/* Right side preview */}
-        <CVPreview personalInfo={personalInfo} experiences={experiences}/>
+        <CVPreview personalInfo={personalInfo} experiences={experiences} educationList={educationList}/>
 
       </div>
     </div>

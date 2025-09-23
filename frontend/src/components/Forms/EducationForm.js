@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './FormSection.css';
 
-function EducationForm() {
-  const [educationList, setEducationList] = useState([]);
-
+function EducationForm({ educationList, setEducationList }) {
   // Add new empty education entry
   const handleAddEducation = () => {
     setEducationList([
@@ -36,12 +34,11 @@ function EducationForm() {
   // Helper to map level -> degree label
   const getDegreeLabel = (level) => {
     switch (level) {
-      case 'Certificate': return 'Certificate'
+      case 'Certificate': return 'Certificate';
       case 'Diploma': return 'Diploma';
       case 'Bachelor': return 'Bachelor Degree';
       case 'Master': return 'Master Degree';
       case 'PhD': return 'PhD Program';
-
       default: return 'Degree';
     }
   };
@@ -135,8 +132,6 @@ function EducationForm() {
             </div>
           </div>
         ))}
-
-
       </div>
     </div>
   );

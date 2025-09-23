@@ -1,7 +1,7 @@
 import React from "react";
 import "./CVPreview.css";
 
-function CVPreview({ personalInfo, experiences = [] }) {
+function CVPreview({ personalInfo, experiences, educationList = [] }) {
   return (
     <div className="preview-panel">
       <h3>CV Preview</h3>
@@ -51,12 +51,34 @@ function CVPreview({ personalInfo, experiences = [] }) {
           </div>
         )}
 
-        {/* Placeholder */}
-        {experiences.length === 0 && !personalInfo.summary && (
-          <div className="preview-placeholder">
-            [Your CV content will appear here as you fill forms]
+
+        {educationList && educationList.length > 0 && (
+          <div className="preview-section">
+            <h4>Education</h4>
+            {educationList.map((edu) => (
+              <div key={edu.id} className="preview-item">
+                <p>
+                  <strong>{edu.degree || "Degree"}</strong>{" "}
+                  {edu.school && `— ${edu.school}`}
+                </p>
+                <p>
+                  {edu.location && <span>{edu.location}</span>}
+                  {edu.graduationDate && (
+                    <span> | Graduated: {edu.graduationDate}</span>
+                  )}
+                </p>
+              </div>
+            ))}
           </div>
         )}
+
+        {!personalInfo.summary &&
+          (!experiences || experiences.length === 0) &&
+          (!educationList || educationList.length === 0) && (
+            <div className="preview-placeholder">
+              [Your CV content will appear here as you fill forms]
+            </div>
+          )}
       </div>
     </div>
   );
