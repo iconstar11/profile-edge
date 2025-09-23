@@ -1,7 +1,7 @@
 import React from "react";
 import "./CVPreview.css";
 
-function CVPreview({ personalInfo, experiences, educationList = [] }) {
+function CVPreview({ personalInfo, experiences, educationList, skills = [] }) {
   return (
     <div className="preview-panel">
       <h3>CV Preview</h3>
@@ -71,6 +71,19 @@ function CVPreview({ personalInfo, experiences, educationList = [] }) {
             ))}
           </div>
         )}
+
+        {/* Skills */}
+        {skills && skills.length > 0 && (
+          <div className="preview-section">
+            <h4>Skills</h4>
+            <ul className="skills-preview-list">
+              {skills.map((skill) => (
+                <li key={skill.id}>{skill.name}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
 
         {!personalInfo.summary &&
           (!experiences || experiences.length === 0) &&

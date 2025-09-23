@@ -138,6 +138,10 @@
 
 .start-fresh-page .skills-input input {
     flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
 }
 
 .start-fresh-page .optimize-bttn {
@@ -145,6 +149,8 @@
     color: var(--text-color);
     border-radius: 6px;
     font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
 }
 
 .start-fresh-page .optimize-bttn:hover {
@@ -153,6 +159,54 @@
 
 .start-fresh-page .skill-add {
     margin-top: 0px;
+    color: var(--text-color);
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+}
+
+.start-fresh-page .skill-add:hover {
+    background: var(--primary-accent-hover);
+}
+
+/* Skills List */
+.start-fresh-page .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Skill Chip */
+.start-fresh-page .skill-chip {
+    background: var(--card-hover-bg);
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 14px;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+.start-fresh-page .skill-chip:hover {
+    background: color-mix(in srgb, var(--secondary-accent) 30%, transparent);
+    border-color: color-mix(in srgb, var(--secondary-accent) 20%, transparent);
+}
+
+/* Remove Icon */
+.start-fresh-page .remove-skill {
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--danger-color, red);
+    transition: color 0.2s ease;
+}
+
+.start-fresh-page .remove-skill:hover {
+    color: darkred;
 }
 
 
