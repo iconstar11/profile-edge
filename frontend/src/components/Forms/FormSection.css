@@ -142,7 +142,7 @@
 
 .start-fresh-page .optimize-bttn {
     background: var(--card-hover-bg);
-    color: #fff;
+    color: var(--text-color);
     border-radius: 6px;
     font-weight: 600;
 }
