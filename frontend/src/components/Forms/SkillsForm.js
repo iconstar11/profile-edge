@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import "./FormSection.css";
 
-function SkillsForm() {
-  const [skills, setSkills] = useState([]);
+function SkillsForm({ skills, setSkills }) {
   const [input, setInput] = useState("");
 
   const addSkill = () => {
@@ -18,9 +18,7 @@ function SkillsForm() {
 
   const addDummySuggestions = () => {
     const suggestions = ["React", "Node.js", "Python", "Teamwork"];
-    const newSkills = suggestions.filter(
-      (s) => !skills.includes(s) // block duplicates
-    );
+    const newSkills = suggestions.filter((s) => !skills.includes(s));
     setSkills([...skills, ...newSkills]);
   };
 

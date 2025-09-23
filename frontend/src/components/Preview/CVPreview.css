@@ -46,3 +46,23 @@
     font-size: 0.95rem;
     line-height: 1.4;
 }
+
+/* ================================
+   --- Skills Section ---
+================================ */
+.preview-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.preview-skill-badge {
+    background-color: var(--card-hover-bg);
+    color: var(--text-color);
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

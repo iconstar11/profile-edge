@@ -73,21 +73,26 @@ function CVPreview({ personalInfo, experiences, educationList, skills = [] }) {
         )}
 
         {/* Skills */}
-        {skills && skills.length > 0 && (
-          <div className="preview-section">
-            <h4>Skills</h4>
-            <ul className="skills-preview-list">
-              {skills.map((skill) => (
-                <li key={skill.id}>{skill.name}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+        {skills.length > 0 && (
+  <div className="preview-section">
+    <h4>Skills</h4>
+    <div className="preview-skills">
+      {skills.map((skill, index) => (
+        <span key={index} className="preview-skill-badge">
+          {skill}
+        </span>
+      ))}
+    </div>
+  </div>
+)}
 
 
+
+        {/* Placeholder */}
         {!personalInfo.summary &&
           (!experiences || experiences.length === 0) &&
-          (!educationList || educationList.length === 0) && (
+          (!educationList || educationList.length === 0) &&
+          skills.length === 0 && (
             <div className="preview-placeholder">
               [Your CV content will appear here as you fill forms]
             </div>
