@@ -1,0 +1,121 @@
+.preview-cv-page {
+    margin-top: 2rem;
+}
+
+
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tabs button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: var(--card-bg-color);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.tabs button.active {
+    background: var(--primary-accent);
+    color: #fff;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.cv-left {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem;
+    background: var(--card-bg-color);
+}
+
+.cv-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ats-panel {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--card-bg-color);
+}
+
+.ats-score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.ats-bar {
+    width: 100%;
+    height: 10px;
+    background: var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.ats-bar-fill {
+    height: 100%;
+    background: var(--primary-accent);
+}
+
+.ats-feedback {
+    margin-top: 0.75rem;
+    padding-left: 1rem;
+    color: var(--text-color);
+}
+
+.download-panel {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--card-bg-color);
+}
+
+.download-btn,
+.edit-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.download-btn {
+    background: var(--primary-accent);
+    color: #fff;
+}
+
+.edit-btn {
+    background: var(--accent-secondary);
+    color: #000;
+}
+
+.template-selector {
+    text-align: center;
+}
+
+.template-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.template-card {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--card-bg-color);
+    cursor: pointer;
+}
