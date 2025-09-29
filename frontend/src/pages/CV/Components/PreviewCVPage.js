@@ -23,7 +23,7 @@ function PreviewCVPage () {
 
     return (
         <div className="preview-cv-page container">
-            <CreateCVHeader activeTab={3} />
+            <CreateCVHeader activeStep={3} />
             {/* Tabs */}
             <div className="tabs">
                 <button

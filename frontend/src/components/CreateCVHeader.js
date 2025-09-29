@@ -1,7 +1,6 @@
-// src/components/CreateCVHeader.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./CreateCVHeader.css"; // your CSS
+import "./CreateCVHeader.css";
 
 const steps = [
   { id: 1, label: "1 Choose Option", path: "/createCv" },
@@ -17,14 +16,8 @@ const CreateCVHeader = ({ activeStep }) => {
       {steps.map((step, index) => (
         <React.Fragment key={step.id}>
           <div
-            className={`step ${activeStep === step.id ? "active" : ""} ${
-              step.id < activeStep ? "clickable" : ""
-            }`}
-            onClick={() => {
-              if (step.id < activeStep) {
-                navigate(step.path);
-              }
-            }}
+            className={`step ${activeStep === step.id ? "active" : "clickable"}`}
+            onClick={() => navigate(step.path)}
           >
             {step.label}
           </div>
