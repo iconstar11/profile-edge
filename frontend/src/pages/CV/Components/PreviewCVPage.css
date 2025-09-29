@@ -2,14 +2,13 @@
     margin-top: 2rem;
 }
 
-
-.tabs {
+.preview-cv-page .tabs {
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
 }
 
-.tabs button {
+.preview-cv-page .tabs button {
     padding: 0.5rem 1rem;
     border: none;
     background: var(--card-bg-color);
@@ -17,44 +16,44 @@
     border-radius: 8px;
 }
 
-.tabs button.active {
+.preview-cv-page .tabs button.active {
     background: var(--primary-accent);
     color: #fff;
 }
 
-.content-grid {
+.preview-cv-page .content-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
 }
 
-.cv-left {
+.preview-cv-page .cv-left {
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 1rem;
     background: var(--card-bg-color);
 }
 
-.cv-right {
+.preview-cv-page .cv-right {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.ats-panel {
+.preview-cv-page .ats-panel {
     padding: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 10px;
     background: var(--card-bg-color);
 }
 
-.ats-score {
+.preview-cv-page .ats-score {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-.ats-bar {
+.preview-cv-page .ats-bar {
     width: 100%;
     height: 10px;
     background: var(--border-color);
@@ -62,26 +61,26 @@
     overflow: hidden;
 }
 
-.ats-bar-fill {
+.preview-cv-page .ats-bar-fill {
     height: 100%;
     background: var(--primary-accent);
 }
 
-.ats-feedback {
+.preview-cv-page .ats-feedback {
     margin-top: 0.75rem;
     padding-left: 1rem;
     color: var(--text-color);
 }
 
-.download-panel {
+.preview-cv-page .download-panel {
     padding: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 10px;
     background: var(--card-bg-color);
 }
 
-.download-btn,
-.edit-btn {
+.preview-cv-page .download-btn,
+.preview-cv-page .edit-btn {
     width: 100%;
     margin-top: 0.5rem;
     padding: 0.75rem;
@@ -90,28 +89,28 @@
     cursor: pointer;
 }
 
-.download-btn {
+.preview-cv-page .download-btn {
     background: var(--primary-accent);
     color: #fff;
 }
 
-.edit-btn {
+.preview-cv-page .edit-btn {
     background: var(--accent-secondary);
     color: #000;
 }
 
-.template-selector {
+.preview-cv-page .template-selector {
     text-align: center;
 }
 
-.template-options {
+.preview-cv-page .template-options {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
     justify-content: center;
 }
 
-.template-card {
+.preview-cv-page .template-card {
     flex: 1;
     padding: 1rem;
     border: 1px solid var(--border-color);

@@ -1,72 +1,75 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import CVPreview from "../../../components/Preview/CVPreview";
 import ATSReadiness from "../../../components/Forms/ATSReadiness";
 import TemplateSelector from "../../../components/Forms/TemplateSelector";
 import "./PreviewCVPage.css";
 import CreateCVHeader from "../../../components/CreateCVHeader";
+import { CVContext } from "../../../utils/CVContext";
+import { useNavigate } from "react-router-dom";
 
-function PreviewCVPage({ personalInfo, experiences, educationList, skills = [] }) {
-  const [activeTab, setActiveTab] = useState("preview");
+function PreviewCVPage () {
+    const navigate = useNavigate();
+    const [activeTab, setActiveTab] = useState("preview");
+    const atsScore = 87;
+    const atsFeedback = 
+    [
+        "✅ Standard formatting",
+        "✅ Keywords match job description",
+        "⚠ Add more industry-specific skills",
+    ];
+    const {
+        personalInfo, experiences, educationList, skills,
+    } = useContext(CVContext);
 
-  // Dummy data (later → Firebase + AI analysis)
-  const atsScore = 87;
-  const atsFeedback = [
-    "✅ Standard formatting",
-    "✅ Keywords match job description",
-    "⚠ Add more industry-specific skills",
-  ];
+    return (
+        <div className="preview-cv-page container">
+            <CreateCVHeader activeTab={3} />
+            {/* Tabs */}
+            <div className="tabs">
+                <button
+                    className={activeTab === "preview" ? "active" : ""}
+                    onClick={() => setActiveTab("preview")}
+                >
+                    Preview
+                </button>
+                <button
+                    className={activeTab === "templates" ? "active" : ""}
+                    onClick={() => setActiveTab("templates")}
+                >
+                    Templates
+                </button>
+            </div>
 
-  // Placeholder CV data (later comes from form/upload/firebase)
+            <div className="content-grid">
+                {/* Left side */}
+                <div className="cv-left">
+                    {activeTab === "preview" && (
+                        <CVPreview
+                            personalInfo={personalInfo}
+                            experiences={experiences}
+                            educationList={educationList}
+                            skills={skills}
+                        />
+                    )}
+                    {activeTab === "templates" && <TemplateSelector />}
+                    <button onClick={() => navigate("/start-fresh")}>Back</button>
 
-  
+                </div>
 
-  return (
-    <div className="preview-cv-page container">
-        <CreateCVHeader />
-      {/* Tabs */}
-      <div className="tabs">
-        <button
-          className={activeTab === "preview" ? "active" : ""}
-          onClick={() => setActiveTab("preview")}
-        >
-          Preview
-        </button>
-        <button
-          className={activeTab === "templates" ? "active" : ""}
-          onClick={() => setActiveTab("templates")}
-        >
-          Templates
-        </button>
-      </div>
+                {/* Right side */}
+                <div className="cv-right">
+                    <ATSReadiness score={atsScore} feedback={atsFeedback} />
 
-      <div className="content-grid">
-        {/* Left side */}
-        <div className="cv-left">
-          {activeTab === "preview" && (
-            <CVPreview
-              personalInfo={personalInfo}
-              experiences={experiences}
-              educationList={educationList}
-              skills={skills}
-            />
-          )}
-          {activeTab === "templates" && <TemplateSelector />}
+                    <div className="download-panel">
+                        <h4>Download CV</h4>
+                        <button className="download-btn">Download PDF</button>
+                        <button className="download-btn">Download Word</button>
+                        <button className="edit-btn">Edit with AI ✍️</button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        {/* Right side */}
-        <div className="cv-right">
-          <ATSReadiness score={atsScore} feedback={atsFeedback} />
-
-          <div className="download-panel">
-            <h4>Download CV</h4>
-            <button className="download-btn">Download PDF</button>
-            <button className="download-btn">Download Word</button>
-            <button className="edit-btn">Edit with AI ✍️</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default PreviewCVPage;
