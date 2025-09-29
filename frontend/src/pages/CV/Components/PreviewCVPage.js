@@ -5,7 +5,7 @@ import TemplateSelector from "../../../components/Forms/TemplateSelector";
 import "./PreviewCVPage.css";
 import CreateCVHeader from "../../../components/CreateCVHeader";
 
-function PreviewCVPage() {
+function PreviewCVPage({ personalInfo, experiences, educationList, skills = [] }) {
   const [activeTab, setActiveTab] = useState("preview");
 
   // Dummy data (later → Firebase + AI analysis)
@@ -17,36 +17,8 @@ function PreviewCVPage() {
   ];
 
   // Placeholder CV data (later comes from form/upload/firebase)
-  const personalInfo = {
-    fullName: "Jane Doe",
-    email: "jane.doe@email.com",
-    phone: "+254 700 123 456",
-    location: "Nairobi, Kenya",
-    linkedin: "linkedin.com/in/janedoe",
-    website: "janedoe.dev",
-    summary:
-      "Software Engineer with experience in React, Flutter, and AI integration.",
-  };
-  const experiences = [
-    {
-      id: 1,
-      title: "Frontend Developer",
-      company: "TechCorp",
-      location: "Remote",
-      startDate: "Jan 2023",
-      description: "Built reusable UI components with React and Tailwind.",
-    },
-  ];
-  const educationList = [
-    {
-      id: 1,
-      degree: "BSc Computer Science",
-      school: "Daystar University",
-      location: "Nairobi",
-      graduationDate: "2024",
-    },
-  ];
-  const skills = ["React", "Flutter", "Firebase", "AI", "Node.js"];
+
+  
 
   return (
     <div className="preview-cv-page container">
