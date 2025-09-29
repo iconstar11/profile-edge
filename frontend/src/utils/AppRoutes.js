@@ -18,6 +18,7 @@ import CreateCVPage from '../pages/CV/CreateCVPage';
 import PrivateRoute from './PrivateRoute';
 import StartFreshPage from '../pages/CV/Components/StartFreshPage';
 import Jobs from '../pages/Jobs/Jobs';
+import PreviewCVPage from '../pages/CV/Components/PreviewCVPage';
 
 const AppRoutes = () => {
   return (
@@ -36,7 +37,7 @@ const AppRoutes = () => {
           <Route path="/upload" element={<UploadPage />} />
           <Route path="/response" element={<ResponsePage />} />
           <Route path="/resumetemplates" element={<TemplatesPage />} />
-          <Route path="preview" element={<PreviewPage />} />
+          <Route path="preview" element={<PreviewCVPage />} />
           <Route path="/start-fresh" element={<StartFreshPage />} />
           
 
