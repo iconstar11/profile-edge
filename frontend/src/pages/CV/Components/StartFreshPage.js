@@ -19,7 +19,7 @@ const StartFreshPage = () => {
     skills, setSkills,
   } = useContext(CVContext); 
 
-  const [activeTab, setActiveTab] = useState("experience");
+  const [activeTab, setActiveTab] = useState("personal");
 
   return (
     <div className="start-fresh-page">

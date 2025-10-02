@@ -17,6 +17,7 @@ import StartFreshPage from '../pages/CV/Components/StartFreshPage';
 import Jobs from '../pages/Jobs/Jobs';
 import PreviewCVPage from '../pages/CV/Components/PreviewCVPage';
 import { CVProvider } from './CVContext';
+import EditCVPage from '../pages/CV/Components/EditCVPage';
 
 
 
@@ -41,6 +42,8 @@ const AppRoutes = () => {
             {/* Preview + Start Fresh */}
             <Route path="/preview" element={<PreviewCVPage />} />
             <Route path="/start-fresh" element={<StartFreshPage />} />
+            <Route path="/edit-Page" element={<EditCVPage />} />
+
 
             {/* Protected Routes */}
             <Route

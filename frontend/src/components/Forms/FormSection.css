@@ -20,7 +20,7 @@
 /* Focused state for inputs */
 .start-fresh-page input:focus,
 .start-fresh-page textarea:focus {
-    border-color: var(--primary-accent);
+    border-color: var(--bg-color);
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.1);
 }
