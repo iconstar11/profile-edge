@@ -20,6 +20,7 @@ function Navbar() {
 
       {/* Right Side */}
       <div className="navbar-right">
+        <Link to="/input" className="auth-link">Cv Tailor</Link>
         <Link to="/jobs" className="auth-link">Jobs</Link>
         {!currentUser ? (
           // Guest Users

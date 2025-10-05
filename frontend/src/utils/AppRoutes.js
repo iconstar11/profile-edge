@@ -18,6 +18,7 @@ import Jobs from '../pages/Jobs/Jobs';
 import PreviewCVPage from '../pages/CV/Components/PreviewCVPage';
 import { CVProvider } from './CVContext';
 import EditCVPage from '../pages/CV/Components/EditCVPage';
+import TailorResumePage from '../pages/Ai_Tailor/TailorResumePage';
 
 
 
@@ -36,6 +37,7 @@ const AppRoutes = () => {
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/signin" element={<SignInPage />} />
             <Route path="/jobs" element={<Jobs />} />
+            <Route path="/input" element={<TailorResumePage />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/response" element={<ResponsePage />} />
 

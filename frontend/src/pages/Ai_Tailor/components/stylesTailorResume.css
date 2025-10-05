@@ -1,0 +1,290 @@
+/* ========== Layout for Tailor Resume Page ========== */
+
+.tailor-page {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Button styling adjustment */
+/* === Tailor Button (Global UI Consistency) === */
+.tailor-btn {
+    padding: 1rem 1.8rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg,
+            var(--primary-accent),
+            var(--secondary-accent));
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px var(--shadow-color);
+    transition: all 0.25s ease-in-out;
+    font-family: "Montserrat", sans-serif;
+}
+
+.tailor-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px var(--shadow-color);
+    opacity: 0.95;
+}
+
+/* Disabled State */
+.tailor-btn.disabled,
+.tailor-btn:disabled {
+    background: var(--disabled-bg);
+    color: var(--secondary-text-color);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    opacity: 0.7;
+}
+
+/* Smooth entry animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tailor-btn {
+    animation: fadeIn 0.6s ease;
+}
+
+/* ========== Job Description Input Section ========== */
+
+.jobdesc-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.section-subtitle {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 1rem;
+}
+
+.jobdesc-textarea {
+    width: 100%;
+    min-height: 180px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    resize: vertical;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    background-color: var(--card-hover-bg);
+    color: var(--text-color);
+}
+
+.jobdesc-textarea:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    background-color: var(--card-bg-color);
+}
+
+.jobdesc-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.keywords-container {
+    margin-top: 1.5rem;
+}
+
+.keyword-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.keyword-tag {
+    background-color: var(--primary-accent);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+
+/* ========== Resume Selector Section ========== */
+
+.resume-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    margin-bottom: 2rem;
+}
+
+.resume-select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.resume-select {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-hover-bg);
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.resume-select:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    background-color: var(--card-bg-color);
+}
+
+.resume-updated {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+}
+
+/* ========== Tailoring Options Section ========== */
+
+.options-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    margin-bottom: 2rem;
+}
+
+.options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    accent-color: var(--primary-accent);
+    width: 18px;
+    height: 18px;
+}
+
+.tone-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tone-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.tone-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.radio-label input[type="radio"] {
+    accent-color: var(--secondary-accent);
+    width: 18px;
+    height: 18px;
+}
+
+/* ========== Credit Usage Section ========== */
+
+.credits-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    margin-bottom: 2rem;
+}
+
+.credit-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.credit-line {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.credit-bar-wrapper {
+    width: 100%;
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.credit-bar-fill {
+    height: 100%;
+    background-color: var(--primary-accent);
+    transition: width 0.3s ease;
+}
+
+.credit-warning {
+    margin-top: 1rem;
+    color: var(--error-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
