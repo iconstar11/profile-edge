@@ -125,3 +125,17 @@
 .nav-links .auth-link:hover {
     background: var(--card-hover-bg);
 }
+
+/* Responsive */
+@media (max-width: 830px) {
+
+    .logo-text {
+        display: none;
+    }
+}
+
+@media (max-width: 568px) {
+    .logo-image-wrapper {
+        display: none;
+    }
+}

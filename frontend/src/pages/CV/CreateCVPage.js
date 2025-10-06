@@ -1,20 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import "./CreateCVPage.css";
 import { Upload, FileText, Sparkles } from "lucide-react";
 import CreateCVHeader from "../../components/CreateCVHeader";
 
 // ✅ Firebase imports
-import { auth, db } from "../../firebase/firebaseConfig";
-import {
-  collection,
-  addDoc,
-  query,
-  where,
-  getDocs,
-  serverTimestamp,
-} from "firebase/firestore";
+import { auth } from "../../firebase/firebaseConfig";
 
 const CreateCVPage = () => {
   const navigate = useNavigate();
@@ -45,32 +36,31 @@ const CreateCVPage = () => {
         return;
       }
 
-      // 🔍 Check if a master resume exists
-      const resumesRef = collection(db, "users", user.uid, "resumes");
-      const q = query(resumesRef, where("version", "==", "master"));
-      const existing = await getDocs(q);
+      // 🔥 Prepare form data
+      const formData = new FormData();
+      formData.append("uid", user.uid);
+      formData.append("file", file);
 
-      // Determine version type
-      const version = existing.empty ? "master" : "version_" + Date.now();
-
-      // ⚡ Mock file URL (since Storage is not active)
-      const mockFileUrl = `https://mock-storage.example.com/${file.name}`;
-
-      // 🗂️ Save metadata in Firestore
-      await addDoc(resumesRef, {
-        name: version === "master" ? "Master Resume" : file.name,
-        version,
-        mockFileUrl, // temporary field
-        size: file.size,
-        type: file.type,
-        createdAt: serverTimestamp(),
-      });
-
-      alert(
-        version === "master"
-          ? "✅ Master Resume saved successfully!"
-          : "✅ New version added successfully!"
+      // 🌐 Send file to Cloud Function
+      const response = await fetch(
+        "https://us-central1-profileedgelatest.cloudfunctions.net/uploadAndExtractCV",
+        {
+          method: "POST",
+          body: formData,
+        }
       );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("✅ CV text extracted and stored successfully!");
+        console.log("Extracted resume ID:", data.resumeId);
+        // Optionally navigate to preview
+        // navigate(`/resume/${data.resumeId}`);
+      } else {
+        console.error("❌ Backend error:", data);
+        alert(data.error || "Failed to process file.");
+      }
     } catch (error) {
       console.error("Upload failed:", error);
       alert("Upload failed. Please check console for details.");
@@ -119,7 +109,7 @@ const CreateCVPage = () => {
             onClick={() => document.getElementById("cv-upload").click()}
             disabled={uploading}
           >
-            {uploading ? "Uploading..." : "Choose File"}
+            {uploading ? "Processing..." : "Choose File"}
           </button>
         </div>
 

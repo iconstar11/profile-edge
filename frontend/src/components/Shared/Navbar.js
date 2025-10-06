@@ -37,9 +37,9 @@ function Navbar() {
           <div className="nav-links">
             <Link to="/dashboard" className="auth-link">Dashboard</Link>
             <Link to="/createCv" className="auth-link">Create CV</Link>
-            <Link to="/resumetemplates" className="auth-link">Templates</Link>
+            
             <Link to="/upload" className="auth-link">Upload</Link>
-            <Link to="/response" className="auth-link">Response</Link>
+            
           </div>
         )}
 
