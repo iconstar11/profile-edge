@@ -1,6 +1,11 @@
 import { getAuth } from "firebase/auth";
 
-const BASE_URL = "https://us-central1-YOUR_PROJECT_ID.cloudfunctions.net";
+// for testing (emulator)
+const BASE_URL = "http://127.0.0.1:5001/profileedgelatest/us-central1";
+
+
+
+// const BASE_URL = "https://us-central1-YOUR_PROJECT_ID.cloudfunctions.net";
 
 /** 🔒 Tailor Resume (requires login) */
 export async function tailorResume(selectedCV, jobDescription, options) {

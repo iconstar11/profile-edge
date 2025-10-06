@@ -288,3 +288,56 @@
     font-weight: 600;
     font-size: 0.95rem;
 }
+
+
+.extract-btn {
+    background-color: var(--secondary-accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.extract-btn:hover {
+    background-color: var(--secondary-accent-hover);
+}
+
+.error-msg {
+    color: var(--error-color);
+    font-weight: 500;
+    margin-top: 0.75rem;
+}
+
+.success-msg {
+    color: var(--primary-accent);
+    font-weight: 500;
+    margin-top: 0.75rem;
+}
+
+.keywords-container {
+    margin-top: 1.5rem;
+    background-color: var(--card-bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.keyword-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.keyword-chip {
+    background-color: var(--primary-accent);
+    color: white;
+    border-radius: 15px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+}
