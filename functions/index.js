@@ -76,64 +76,228 @@ const data = await parser(dataBuffer);
  *  🧠 1. Upload + Extract CV Text
  * ------------------------------------------------------ */
 export const uploadAndExtractCV = onRequest(async (req, res) => {
+  console.log('📥 uploadAndExtractCV: Request received', {
+    method: req.method,
+    headers: req.headers
+  });
+
   if (req.method !== "POST") {
+    console.log('❌ uploadAndExtractCV: Method not allowed', { method: req.method });
     return res.status(405).send("Only POST allowed");
   }
 
-  const busboy = Busboy({ headers: req.headers });
-  const fields = {};
-  const files = [];
+  // Fix for Firebase Functions - handle rawBody properly
+  return new Promise((resolve, reject) => {
+    const busboy = Busboy({ 
+      headers: req.headers,
+      limits: {
+        fileSize: 10 * 1024 * 1024, // 10MB limit
+      }
+    });
 
-  busboy.on("file", (name, file, info) => {
-    const { filename, mimeType } = info;
-    const buffer = [];
-    file.on("data", (data) => buffer.push(data));
-    file.on("end", () => {
-      files.push({
-        filename,
-        mimeType,
-        buffer: Buffer.concat(buffer),
+    const fields = {};
+    const files = [];
+
+    busboy.on("file", (name, file, info) => {
+      const { filename, mimeType } = info;
+      console.log('📄 uploadAndExtractCV: File detected', { name, filename, mimeType });
+      
+      const buffer = [];
+      file.on("data", (data) => {
+        buffer.push(data);
+      });
+      
+      file.on("end", () => {
+        console.log('✅ uploadAndExtractCV: File upload complete', {
+          filename,
+          mimeType,
+          totalSize: Buffer.concat(buffer).length
+        });
+        files.push({
+          filename,
+          mimeType,
+          buffer: Buffer.concat(buffer),
+        });
       });
     });
-  });
 
-  busboy.on("field", (name, val) => (fields[name] = val));
+    busboy.on("field", (name, val) => {
+      console.log('🔤 uploadAndExtractCV: Field received', { name, val });
+      fields[name] = val;
+    });
 
-  busboy.on("finish", async () => {
-    try {
-      const { uid } = fields;
-      if (!uid) return res.status(400).send("Missing uid");
-      if (files.length === 0) return res.status(400).send("No file uploaded");
+    busboy.on("finish", async () => {
+      console.log('🎉 uploadAndExtractCV: Busboy finish event triggered');
+      
+      try {
+        const { uid } = fields;
+        console.log('👤 uploadAndExtractCV: Processing fields', { fields, uid });
 
-      const file = files[0];
-      const tempPath = saveTempFile(file);
-      const text = await extractText(tempPath, file.mimeType);
-      deleteTempFile(tempPath);
+        if (!uid) {
+          console.log('❌ uploadAndExtractCV: Missing uid field');
+          res.status(400).send("Missing uid");
+          return resolve();
+        }
+        
+        if (files.length === 0) {
+          console.log('❌ uploadAndExtractCV: No files uploaded');
+          res.status(400).send("No file uploaded");
+          return resolve();
+        }
 
-      // Store text in Firestore
-      const resumeRef = await db
-        .collection("users")
-        .doc(uid)
-        .collection("resumes")
-        .add({
-          fileName: file.filename,
+        const file = files[0];
+        console.log('💾 uploadAndExtractCV: Processing file', {
+          filename: file.filename,
           mimeType: file.mimeType,
-          rawText: text,
-          createdAt: FieldValue.serverTimestamp(),
+          bufferSize: file.buffer.length
         });
 
-      return res.status(200).json({
-        message: "✅ Text extracted successfully",
-        resumeId: resumeRef.id,
+        console.log('📝 uploadAndExtractCV: Saving temporary file');
+        const tempPath = saveTempFile(file);
+        console.log('📄 uploadAndExtractCV: Temporary file saved', { tempPath });
+
+        console.log('🔍 uploadAndExtractCV: Extracting text from file');
+        const text = await extractText(tempPath, file.mimeType);
+        console.log('✅ uploadAndExtractCV: Text extraction complete', {
+          textLength: text.length,
+          textPreview: text.substring(0, 100) + '...'
+        });
+
+        console.log('🧹 uploadAndExtractCV: Deleting temporary file');
+        deleteTempFile(tempPath);
+
+        // Store text in Firestore
+        console.log('🔥 uploadAndExtractCV: Storing in Firestore', { uid });
+        const resumeRef = await db
+          .collection("users")
+          .doc(uid)
+          .collection("resumes")
+          .add({
+            fileName: file.filename,
+            mimeType: file.mimeType,
+            rawText: text,
+            createdAt: FieldValue.serverTimestamp(),
+            version: await getNextVersion(uid)
+          });
+
+        // Add this helper function
+        async function getNextVersion(uid) {
+  const resumesSnapshot = await db
+    .collection("users")
+    .doc(uid)
+    .collection("resumes")
+    .orderBy("createdAt", "asc")
+    .get();
+
+  // Generate current date in YYYY-MM-DD format
+  const now = new Date();
+  const date = now.toISOString().split("T")[0]; // e.g. "2025-10-07"
+
+  if (resumesSnapshot.empty) {
+    return `CV_${date}_V1`; // first version
+  }
+
+  // Count existing resumes to determine next version number
+  const resumeCount = resumesSnapshot.size + 1; // +1 for the new one
+  return `CV_${date}_V${resumeCount}`;
+}
+
+        console.log('✅ uploadAndExtractCV: Firestore document created', {
+          resumeId: resumeRef.id
+        });
+
+        res.status(200).json({
+          message: "✅ Text extracted successfully",
+          resumeId: resumeRef.id,
+        });
+        resolve();
+      } catch (error) {
+        console.error('❌ uploadAndExtractCV: Error occurred', {
+          error: error.message,
+          stack: error.stack,
+          fields,
+          filesCount: files.length
+        });
+        res.status(500).json({ error: "Failed to extract text" });
+        resolve();
+      }
+    });
+
+    busboy.on("error", (error) => {
+      console.error('❌ uploadAndExtractCV: Busboy error', {
+        error: error.message,
+        stack: error.stack
       });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ error: "Failed to extract text" });
+      res.status(500).json({ error: "File upload failed" });
+      resolve();
+    });
+
+    console.log('🚀 uploadAndExtractCV: Starting request pipe to busboy');
+    
+    // Use rawBody if available (Firebase Functions v2)
+    if (req.rawBody) {
+      console.log('🔧 uploadAndExtractCV: Using rawBody');
+      busboy.end(req.rawBody);
+    } else {
+      req.pipe(busboy);
     }
   });
-
-  req.pipe(busboy);
 });
+
+/** ------------------------------------------------------
+ *  📄 2. Get User CVs
+ * ------------------------------------------------------ */
+export const getUserCVs = onRequest(async (req, res) => {
+  if (req.method !== "GET") {
+    return res.status(405).send("Only GET allowed");
+  }
+
+  try {
+    const { uid } = req.query;
+    
+    if (!uid) {
+      return res.status(400).send("Missing uid parameter");
+    }
+
+    console.log('📋 getUserCVs: Fetching CVs for user', { uid });
+
+    const resumesSnapshot = await db
+      .collection("users")
+      .doc(uid)
+      .collection("resumes")
+      .orderBy("createdAt", "desc")
+      .get();
+
+    const resumes = [];
+    resumesSnapshot.forEach(doc => {
+      const data = doc.data();
+      resumes.push({
+        id: doc.id,
+        fileName: data.fileName,
+        mimeType: data.mimeType,
+        rawText: data.rawText,
+        createdAt: data.createdAt?.toDate?.() || data.createdAt,
+        // You can add text preview here
+        textPreview: data.rawText?.substring(0, 200) + '...'
+      });
+    });
+
+    console.log('✅ getUserCVs: Found resumes', { count: resumes.length });
+
+    return res.status(200).json({
+      resumes,
+      count: resumes.length
+    });
+
+  } catch (error) {
+    console.error('❌ getUserCVs: Error occurred', {
+      error: error.message,
+      stack: error.stack
+    });
+    return res.status(500).json({ error: "Failed to fetch CVs" });
+  }
+});
+
 
 /** ------------------------------------------------------
  *  ✂️ 2. Tailor Resume (AI)
