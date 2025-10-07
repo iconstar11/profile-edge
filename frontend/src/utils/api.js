@@ -1,7 +1,8 @@
 import { getAuth } from "firebase/auth";
+import { BASE_URL } from "../components/Shared/config";
 
 // for testing (emulator)
-const BASE_URL = "http://127.0.0.1:5001/profileedgelatest/us-central1";
+
 
 
 

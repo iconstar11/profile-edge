@@ -59,7 +59,6 @@ const Dashboard = () => {
 
   // Simulate fetching data from Firestore
   useEffect(() => {
-    // Replace this with your actual Firestore fetch
     // const fetchUserData = async () => {
     //   const docRef = doc(db, "users", userId);
     //   const docSnap = await getDoc(docRef);

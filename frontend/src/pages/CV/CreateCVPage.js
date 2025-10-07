@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./CreateCVPage.css";
 import { Upload, FileText, Sparkles } from "lucide-react";
 import CreateCVHeader from "../../components/CreateCVHeader";
-
-// ✅ Firebase imports
 import { auth } from "../../firebase/firebaseConfig";
+import { BASE_URL } from "../../components/Shared/config";
+
 
 const CreateCVPage = () => {
   const navigate = useNavigate();
@@ -15,7 +15,6 @@ const CreateCVPage = () => {
     const file = event.target.files[0];
     if (!file) return;
 
-    // ✅ Only allow PDF or DOCX
     if (
       ![
         "application/pdf",
@@ -36,27 +35,21 @@ const CreateCVPage = () => {
         return;
       }
 
-      // 🔥 Prepare form data
       const formData = new FormData();
       formData.append("uid", user.uid);
       formData.append("file", file);
 
-      // 🌐 Send file to Cloud Function
-      const response = await fetch(
-        "https://us-central1-profileedgelatest.cloudfunctions.net/uploadAndExtractCV",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      // ✅ Use local emulator URL for testing
+      const response = await fetch(`${BASE_URL}/uploadAndExtractCV`, {
+        method: "POST",
+        body: formData,
+      });
 
       const data = await response.json();
 
       if (response.ok) {
         alert("✅ CV text extracted and stored successfully!");
         console.log("Extracted resume ID:", data.resumeId);
-        // Optionally navigate to preview
-        // navigate(`/resume/${data.resumeId}`);
       } else {
         console.error("❌ Backend error:", data);
         alert(data.error || "Failed to process file.");
@@ -71,18 +64,13 @@ const CreateCVPage = () => {
 
   return (
     <div className="create-cv-page">
-      {/* Step Progress */}
       <CreateCVHeader activeStep={1} />
-
-      {/* Header */}
       <div className="create-cv-header">
         <h2>Create Your Perfect CV</h2>
         <p>Choose how you'd like to get started with your CV creation</p>
       </div>
 
-      {/* Options */}
       <div className="cv-options">
-        {/* Upload CV */}
         <div className="cv-card">
           <div className="icon upload-icon">
             <Upload size={28} />
@@ -95,7 +83,6 @@ const CreateCVPage = () => {
             <span>Click to upload PDF or DOCX</span>
           </label>
 
-          {/* Hidden input for file picker */}
           <input
             id="cv-upload"
             type="file"
@@ -113,7 +100,6 @@ const CreateCVPage = () => {
           </button>
         </div>
 
-        {/* Create from Scratch */}
         <div className="cv-card highlighted">
           <div className="icon scratch-icon">
             <FileText size={28} />
@@ -133,7 +119,6 @@ const CreateCVPage = () => {
           </button>
         </div>
 
-        {/* AI Interview */}
         <div className="cv-card">
           <div className="icon ai-icon">
             <Sparkles size={28} />
@@ -147,7 +132,6 @@ const CreateCVPage = () => {
         </div>
       </div>
 
-      {/* Footer Note */}
       <p className="footer-note">
         All methods include AI-powered suggestions and ATS optimization
       </p>
