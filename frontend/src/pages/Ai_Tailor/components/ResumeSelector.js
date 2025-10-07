@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
+import { AuthContext } from '../../../firebase/AuthContext'
+import { db } from "../../../firebase/firebaseConfig";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import "./stylesTailorResume.css";
-import { db } from "../../../firebase/firebaseConfig";
-import { AuthContext } from "../../../firebase/AuthContext";
 
-export default function ResumeSelector({ selected, onChange }) {
+export default function ResumeSelector({ selected, onChange, onUpload }) {
   const { currentUser } = useContext(AuthContext);
   const [resumes, setResumes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,8 +46,15 @@ export default function ResumeSelector({ selected, onChange }) {
       <div className="resume-card">
         <h2 className="section-title">Login Required</h2>
         <p className="section-subtitle">
-          Please <a href="/login" className="login-link">log in</a> to upload or select your CV.
+          Please{" "}
+          <a href="/login" className="login-link">
+            log in
+          </a>{" "}
+          to upload or select your CV.
         </p>
+        <button className="upload-btn disabled" disabled>
+          Upload Resume
+        </button>
       </div>
     );
   }
@@ -86,6 +93,10 @@ export default function ResumeSelector({ selected, onChange }) {
       ) : (
         <p className="no-resumes">No resumes found. Upload one to begin.</p>
       )}
+
+      <button className="upload-btn" onClick={onUpload}>
+        + Upload Resume
+      </button>
     </div>
   );
 }

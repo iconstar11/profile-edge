@@ -179,6 +179,54 @@
     color: var(--secondary-text-color);
 }
 
+/* === Upload Button === */
+.upload-btn {
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.8rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-accent);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.25);
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 123, 255, 0.35);
+}
+
+/* Disabled state (shown for non-logged users) */
+.upload-btn.disabled,
+.upload-btn:disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Login link inside message */
+.login-link {
+    color: var(--primary-accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* Message for no resumes */
+.no-resumes {
+    font-size: 0.95rem;
+    color: #777;
+    margin-top: 1rem;
+}
+
 /* ========== Tailoring Options Section ========== */
 
 .options-card {

@@ -305,16 +305,24 @@ export const getUserCVs = onRequest(async (req, res) => {
 export const tailorResume = onRequest({ region: "us-central1" }, async (req, res) => {
   if (req.method !== "POST") return res.status(405).send("Method Not Allowed");
 
-  // const authHeader = req.headers.authorization;
-  // (Temporarily skipping auth for testing)
-  const uid = "test-user";
-
-  const { selectedCV, jobDescription, options } = req.body;
-  if (!selectedCV || !jobDescription) {
-    return res.status(400).json({ error: "Missing required fields" });
-  }
-
   try {
+    // ✅ Verify Firebase Auth token (works with frontend Authorization: Bearer <token>)
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return res.status(401).json({ error: "Missing or invalid authorization header" });
+    }
+
+    const idToken = authHeader.split("Bearer ")[1];
+    const decodedToken = await auth.verifyIdToken(idToken);
+    const uid = decodedToken.uid;
+
+    // ✅ Parse Request Body
+    const { selectedCV, jobDescription, options } = req.body;
+    if (!selectedCV || !jobDescription) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    // ✅ Construct Prompt
     const prompt = `
 You are an expert career assistant.
 Tailor the following resume for the provided job description.
@@ -330,6 +338,7 @@ ${selectedCV}
 Return ONLY the tailored resume text.
     `;
 
+    // ✅ Call DeepSeek API
     const response = await fetch("https://api.deepseek.com/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -346,6 +355,7 @@ Return ONLY the tailored resume text.
     const data = await response.json();
     const tailoredText = data?.choices?.[0]?.message?.content || "";
 
+    // ✅ Save to Firestore under authenticated user
     const versionName = selectedCV.title || "Untitled Resume";
     await db
       .collection("users")
@@ -360,11 +370,13 @@ Return ONLY the tailored resume text.
 
     return res.status(200).json({ tailoredResume: tailoredText });
   } catch (error) {
-    console.error("Error tailoring resume:", error);
+    console.error("❌ Error tailoring resume:", error);
     return res.status(500).json({ error: "Failed to tailor resume" });
   }
 });
 
+
+  
 /** ------------------------------------------------------
  *  🔍 3. Extract Keywords
  * ------------------------------------------------------ */
