@@ -48,7 +48,7 @@ const CreateCVPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert("✅ CV text extracted and stored successfully!");
+        alert("✅ CV successfully!");
         console.log("Extracted resume ID:", data.resumeId);
       } else {
         console.error("❌ Backend error:", data);

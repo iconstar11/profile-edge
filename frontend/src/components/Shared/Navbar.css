@@ -129,7 +129,6 @@
 
 /* ===== ACTIVE PAGE HIGHLIGHT ===== */
 .auth-link.active {
-  background: var(--primary-accent);
   color: var(--text-color);
   border-color: var(--primary-accent);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
