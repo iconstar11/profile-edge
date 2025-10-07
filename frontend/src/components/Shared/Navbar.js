@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../firebase/AuthContext';
 import ThemeToggle from '../../utils/ThemeToggle';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../assets/logos/p_logo.png';
 
 function Navbar() {
   const { currentUser } = useContext(AuthContext);
+  const location = useLocation(); // ✅ Get current route path
 
   return (
     <nav className="navbar">
@@ -20,26 +21,54 @@ function Navbar() {
 
       {/* Right Side */}
       <div className="navbar-right">
-        <Link to="/input" className="auth-link">Cv Tailor</Link>
-        <Link to="/jobs" className="auth-link">Jobs</Link>
+        <Link
+          to="/input"
+          className={`auth-link ${location.pathname === '/input' ? 'active' : ''}`}
+        >
+          Cv Tailor
+        </Link>
+        <Link
+          to="/jobs"
+          className={`auth-link ${location.pathname === '/jobs' ? 'active' : ''}`}
+        >
+          Jobs
+        </Link>
+
         {!currentUser ? (
-          // Guest Users
           <div className="auth-buttons">
-            <Link to="/signin" className="auth-link">
+            <Link
+              to="/signin"
+              className={`auth-link ${location.pathname === '/signin' ? 'active' : ''}`}
+            >
               Log in
             </Link>
-            <Link to="/signup" className="auth-link primary">
+            <Link
+              to="/signup"
+              className={`auth-link primary ${location.pathname === '/signup' ? 'active' : ''}`}
+            >
               Sign up
             </Link>
           </div>
         ) : (
-          // Logged-in Users
           <div className="nav-links">
-            <Link to="/dashboard" className="auth-link">Dashboard</Link>
-            <Link to="/createCv" className="auth-link">Create CV</Link>
-            
-            <Link to="/upload" className="auth-link">Upload</Link>
-            
+            <Link
+              to="/dashboard"
+              className={`auth-link ${location.pathname === '/dashboard' ? 'active' : ''}`}
+            >
+              Dashboard
+            </Link>
+            <Link
+              to="/createCv"
+              className={`auth-link ${location.pathname === '/createCv' ? 'active' : ''}`}
+            >
+              Create CV
+            </Link>
+            <Link
+              to="/upload"
+              className={`auth-link ${location.pathname === '/upload' ? 'active' : ''}`}
+            >
+              Upload
+            </Link>
           </div>
         )}
 

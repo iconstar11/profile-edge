@@ -81,8 +81,8 @@
 }
 
 .auth-link.primary {
-    background: var(--primary-accent);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-accent) 0%, #2e8b57 100%);
+    color: var(--text-color);
     border: 1px solid var(--primary-accent);
 }
 
@@ -124,7 +124,17 @@
 
 .nav-links .auth-link:hover {
     background: var(--card-hover-bg);
+    color: black;
 }
+
+/* ===== ACTIVE PAGE HIGHLIGHT ===== */
+.auth-link.active {
+  background: var(--primary-accent);
+  color: var(--text-color);
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
 
 /* Responsive */
 @media (max-width: 830px) {
