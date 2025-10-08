@@ -1,32 +1,29 @@
-// src/components/Templates/ElegantTemplate.js
+// src/components/Templates/MinimalistTemplate.js
 import React from "react";
-import "./ElegantTemplate.css";
+import "./MinimalistTemplate.css";
 
-const ElegantTemplate = ({ personalInfo, experiences, educationList, skills }) => {
+const MinimalistTemplate = ({ personalInfo, experiences, educationList, skills }) => {
   return (
-    <div className="elegant-template">
+    <div className="minimalist-template">
       {/* Header */}
-      <header className="elegant-header">
+      <header className="minimalist-header">
         <h1>{personalInfo.fullName || "Your Name"}</h1>
-        <p className="subtitle">
-          {personalInfo.title || "Professional Title"}
-        </p>
-        <p className="contact">
+        <p>{personalInfo.title || "Professional Title"}</p>
+        <p>
           {personalInfo.email || "email@example.com"} |{" "}
           {personalInfo.phone || "123-456-7890"} |{" "}
           {personalInfo.location || "Nairobi, Kenya"}
         </p>
       </header>
 
-      <hr className="divider" />
-
+      {/* Experience Section */}
       <section className="section">
         <h2>Experience</h2>
         {experiences && experiences.length > 0 ? (
           experiences.map((exp, i) => (
             <div key={i} className="exp-item">
               <div className="exp-header">
-                <span className="exp-title">{exp.role || "Job Title"}</span>
+                <span className="exp-role">{exp.role || "Job Title"}</span>
                 <span className="exp-date">
                   {exp.startDate} – {exp.endDate}
                 </span>
@@ -36,10 +33,11 @@ const ElegantTemplate = ({ personalInfo, experiences, educationList, skills }) =
             </div>
           ))
         ) : (
-          <p>No experience added yet.</p>
+          <p className="placeholder">No experience added yet.</p>
         )}
       </section>
 
+      {/* Education Section */}
       <section className="section">
         <h2>Education</h2>
         {educationList && educationList.length > 0 ? (
@@ -53,22 +51,23 @@ const ElegantTemplate = ({ personalInfo, experiences, educationList, skills }) =
             </div>
           ))
         ) : (
-          <p>No education added yet.</p>
+          <p className="placeholder">No education added yet.</p>
         )}
       </section>
 
+      {/* Skills Section */}
       <section className="section">
         <h2>Skills</h2>
-        <ul className="skills-list">
+        <div className="skills">
           {skills && skills.length > 0 ? (
-            skills.map((skill, i) => <li key={i}>{skill}</li>)
+            skills.map((skill, i) => <span key={i}>{skill}</span>)
           ) : (
-            <p>No skills added yet.</p>
+            <p className="placeholder">No skills added yet.</p>
           )}
-        </ul>
+        </div>
       </section>
     </div>
   );
 };
 
-export default ElegantTemplate;
+export default MinimalistTemplate;
