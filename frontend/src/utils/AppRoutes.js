@@ -19,6 +19,7 @@ import { CVProvider } from './CVContext';
 import EditCVPage from '../pages/CV/Components/EditCVPage';
 import TailorResumePage from '../pages/Ai_Tailor/TailorResumePage';
 import TailoringResultPage from '../pages/Ai_Tailor/TailoringResultPage';
+import ComingSoon from '../pages/ComingSoon/ComingSoon';
 
 const AppRoutes = () => {
   return (
@@ -38,6 +39,7 @@ const AppRoutes = () => {
             <Route path="/input" element={<TailorResumePage />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/result" element={<TailoringResultPage />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
 
             {/* Protected Routes */}
             <Route
@@ -48,6 +50,8 @@ const AppRoutes = () => {
                 </PrivateRoute>
               }
             />
+
+            
             
             {/* CV Creation Routes - All Protected */}
             <Route
