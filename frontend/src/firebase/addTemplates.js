@@ -1,4 +1,4 @@
-import { db } from "./firebaseConfig";
+/** import { db } from "./firebaseConfig";
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
 const templates = [
@@ -39,4 +39,4 @@ const addTemplatesToFirestore = async () => {
 };
 
 // Export the function
-export default addTemplatesToFirestore;
+export default addTemplatesToFirestore; */

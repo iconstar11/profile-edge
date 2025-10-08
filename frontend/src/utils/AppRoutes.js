@@ -20,8 +20,6 @@ import EditCVPage from '../pages/CV/Components/EditCVPage';
 import TailorResumePage from '../pages/Ai_Tailor/TailorResumePage';
 import TailoringResultPage from '../pages/Ai_Tailor/TailoringResultPage';
 
-
-
 const AppRoutes = () => {
   return (
     <Router>
@@ -41,12 +39,6 @@ const AppRoutes = () => {
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/result" element={<TailoringResultPage />} />
 
-            {/* Preview + Start Fresh */}
-            <Route path="/createCv/preview" element={<PreviewCVPage />} />
-            <Route path="/createCv/start-fresh" element={<StartFreshPage />} />
-            <Route path="/edit-Page" element={<EditCVPage />} />
-
-
             {/* Protected Routes */}
             <Route
               path="/dashboard"
@@ -56,11 +48,37 @@ const AppRoutes = () => {
                 </PrivateRoute>
               }
             />
+            
+            {/* CV Creation Routes - All Protected */}
             <Route
               path="/createCv"
               element={
                 <PrivateRoute>
                   <CreateCVPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/createCv/preview"
+              element={
+                <PrivateRoute>
+                  <PreviewCVPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/createCv/start-fresh"
+              element={
+                <PrivateRoute>
+                  <StartFreshPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/createCv/edit"
+              element={
+                <PrivateRoute>
+                  <EditCVPage />
                 </PrivateRoute>
               }
             />
