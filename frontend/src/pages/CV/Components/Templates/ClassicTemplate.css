@@ -1,0 +1,101 @@
+.classic-template {
+    background: #fff;
+    color: #222;
+    font-family: "Times New Roman", Times, serif;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.classic-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.classic-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.classic-contact,
+.classic-links {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.classic-links a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.classic-links a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+.classic-section {
+    margin-bottom: 1.5rem;
+}
+
+.classic-section h2 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.exp-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.exp-meta {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.exp-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+/* Education */
+.classic-education {
+    margin-bottom: 0.8rem;
+}
+
+/* Skills */
+.classic-skills {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.classic-skills li {
+    background: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 4px;
+    font-size: 0.9rem;
+}
+
+/* Placeholder */
+.classic-placeholder {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    margin-top: 2rem;
+}

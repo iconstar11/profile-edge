@@ -113,7 +113,7 @@ const CreateCVPage = () => {
           </ul>
           <button
             className="btn-primary"
-            onClick={() => navigate("/start-fresh")}
+            onClick={() => navigate("/createCv/start-fresh")}
           >
             Start Fresh
           </button>

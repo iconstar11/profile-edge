@@ -1,16 +1,17 @@
-import React from "react";
+import "./TemplateSelector.css";
 
-function TemplateSelector() {
+function TemplateSelector({ selectedTemplate, onChange }) {
   return (
     <div className="template-selector">
-      <h4>Select a Template</h4>
-      <div className="template-options">
-        <div className="template-card">Modern</div>
-        <div className="template-card">Classic</div>
-      </div>
+      <label>Select Template: </label>
+      <select value={selectedTemplate} onChange={(e) => onChange(e.target.value)}>
+        <option value="classic">Classic</option>
+        <option value="modern">Modern</option>
+      </select>
     </div>
   );
 }
 
 export default TemplateSelector;
+
 

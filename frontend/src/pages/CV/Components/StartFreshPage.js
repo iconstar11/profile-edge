@@ -60,7 +60,7 @@ const StartFreshPage = () => {
             <button className="back-btn" onClick={() => navigate("/")}>
               Back
             </button>
-            <button className="next-btn" onClick={() => navigate("/preview")}>
+            <button className="next-btn" onClick={() => navigate("/createCv/preview")}>
               Preview CV
             </button>
           </div>
