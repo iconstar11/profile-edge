@@ -59,7 +59,7 @@ function Navbar() {
             </Link>
             <Link
               to="/createCv"
-              className={`auth-link ${location.pathname === '/createCv' ? 'active' : ''}`}
+              className={`auth-link ${location.pathname.startsWith('/createCv') ? 'active' : ''}`}
             >
               Create CV
             </Link>

@@ -4,7 +4,6 @@ import "./CVPreview.css";
 function CVPreview({ personalInfo, experiences, educationList, skills = [] }) {
   return (
     <div className="preview-panel">
-      <h3>CV Preview</h3>
       <div className="preview-box">
         {/* Personal Info */}
         <p className="preview-name">{personalInfo.fullName || "Your Name"}</p>
@@ -94,7 +93,7 @@ function CVPreview({ personalInfo, experiences, educationList, skills = [] }) {
           (!educationList || educationList.length === 0) &&
           skills.length === 0 && (
             <div className="preview-placeholder">
-              [Your CV content will appear here as you fill forms]
+              [Fill in your details to view them here]
             </div>
           )}
       </div>

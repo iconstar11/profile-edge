@@ -8,7 +8,6 @@ import NotFoundPage from '../pages/NotFound/NotFoundPage';
 import UploadPage from '../pages/CV/UploadPage';
 import SignUpPage from '../pages/Auth/SignUpPage';
 import SignInPage from '../pages/Auth/SignInPage';
-import ResponsePage from '../pages/CV/ResponsePage';
 import Dashboard from '../pages/Dashboard/dashboard';
 import LandingPage from '../pages/Landing/LandingPage';
 import CreateCVPage from '../pages/CV/CreateCVPage';
@@ -43,8 +42,8 @@ const AppRoutes = () => {
             <Route path="/result" element={<TailoringResultPage />} />
 
             {/* Preview + Start Fresh */}
-            <Route path="/preview" element={<PreviewCVPage />} />
-            <Route path="/start-fresh" element={<StartFreshPage />} />
+            <Route path="/createCv/preview" element={<PreviewCVPage />} />
+            <Route path="/createCv/start-fresh" element={<StartFreshPage />} />
             <Route path="/edit-Page" element={<EditCVPage />} />
 
 

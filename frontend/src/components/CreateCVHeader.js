@@ -4,8 +4,8 @@ import "./CreateCVHeader.css";
 
 const steps = [
   { id: 1, label: "1 Choose Option", path: "/createCv" },
-  { id: 2, label: "2 Edit & Customize", path: "/start-fresh" },
-  { id: 3, label: "3 Preview & Export", path: "/preview" },
+  { id: 2, label: "2 Edit & Customize", path: "/createCv/start-fresh" },
+  { id: 3, label: "3 Preview & Export", path: "/createCv/preview" },
 ];
 
 const CreateCVHeader = ({ activeStep }) => {
