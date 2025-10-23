@@ -91,7 +91,7 @@ function SignUpPage() {
             });
 
             // Redirect to dashboard
-            navigate('/');
+            navigate('/createCv');
         } catch (err) {
             setError(err.message);
         } finally {

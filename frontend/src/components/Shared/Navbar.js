@@ -63,12 +63,12 @@ function Navbar() {
             >
               Create CV
             </Link>
-            <Link
+             {/* <Link
               to="/upload"
               className={`auth-link ${location.pathname === '/upload' ? 'active' : ''}`}
             >
               Upload
-            </Link>
+            </Link>*/}
           </div>
         )}
 

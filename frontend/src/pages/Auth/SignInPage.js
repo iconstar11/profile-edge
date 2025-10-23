@@ -49,7 +49,7 @@ function SignInPage() {
             const user = userCredential.user;
 
             // Redirect to dashboard
-            navigate('/');
+            navigate('/dashboard');
         } catch (err) {
             setError(err.message);
         } finally {
