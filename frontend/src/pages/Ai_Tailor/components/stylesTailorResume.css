@@ -389,3 +389,35 @@
     padding: 0.3rem 0.8rem;
     font-size: 0.9rem;
 }
+
+
+/* Upload progress styles */
+.upload-progress {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--card-hover-bg);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.upload-progress p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Disabled state for upload button */
+.upload-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Login link styles */
+.login-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
