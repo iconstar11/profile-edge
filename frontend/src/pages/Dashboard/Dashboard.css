@@ -340,3 +340,82 @@
     justify-content: flex-end;
   }
 }
+
+/* Upload Success Popup */
+.upload-success-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+  max-width: 350px;
+}
+
+.popup-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.popup-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.popup-text h4 {
+  margin: 0 0 4px 0;
+  color: #2e7d32;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.popup-text p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.popup-close {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.popup-close:hover {
+  background: #f5f5f5;
+  color: #666;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Disabled state for upload button */
+.action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.action-btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
