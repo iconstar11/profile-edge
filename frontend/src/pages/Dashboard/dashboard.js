@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Upload, FileText, Search, Download, Edit2, Trash2, TrendingUp, Bell, X } from 'lucide-react';
 import './Dashboard.css';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../firebase/firebaseConfig';
-import { BASE_URL } from '../components/Shared/config';
+
+import { BASE_URL } from '../../components/Shared/config';
+import { auth } from '../../firebase/firebaseConfig';
+
 
 const Dashboard = () => {
   // State for user data from Firestore
