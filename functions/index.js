@@ -19,8 +19,6 @@ async function getPdfParser() {
   }
   return pdf;
 }
-
-
 // Firebase init
 initializeApp();
 const db = getFirestore();
