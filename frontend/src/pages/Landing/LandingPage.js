@@ -4,10 +4,13 @@ import { Shield, Zap, Download, BarChart, Target, FileText, Palette, Cpu, CheckC
 import "./LandingPage.css";
 import Image from "../../assets/images/landing_page.png";
 import darkImage from "../../assets/images/landing_dark.png";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
 
   const [theme, setTheme] = useState(document.documentElement.getAttribute('data-theme') || 'light');
+  const navigate = useNavigate();
+  
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
@@ -32,8 +35,8 @@ const LandingPage = () => {
             Create professional, ATS-friendly resumes in minutes.
           </p>
           <div className="hero-buttons">
-            <button className="primary-btn">Build My CV Now →</button>
-            <button className="secondary-btn">See Examples</button>
+            <button className="primary-btn" onClick={() => navigate("/signup")}>Build My CV Now →</button>
+            <button className="secondary-btn" onClick={() => navigate("/signup")}>See Examples</button>
           </div>
 
           <div className="badges">
