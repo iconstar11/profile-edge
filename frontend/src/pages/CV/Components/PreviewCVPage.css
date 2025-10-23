@@ -91,6 +91,10 @@
     cursor: pointer;
 }
 
+.preview-cv-page .edit-btn {
+    display: none;
+}
+
 .preview-cv-page .download-btn {
     background: var(--primary-accent);
     color: #fff;

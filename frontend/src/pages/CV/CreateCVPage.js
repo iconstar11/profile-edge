@@ -128,7 +128,7 @@ const CreateCVPage = () => {
             Our AI will conduct a friendly interview to understand your
             background and create a tailored CV.
           </p>
-          <button className="btn-outline">Start AI Interview</button>
+          <button className="btn-outline" onClick={() => navigate("/coming-soon")}>Start AI Interview</button>
         </div>
       </div>
 
