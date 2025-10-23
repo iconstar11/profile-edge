@@ -40,7 +40,7 @@ const AppRoutes = () => {
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/result" element={<TailoringResultPage />} />
             <Route path="/coming-soon" element={<ComingSoon />} />
-
+            <Route path="/tailor-resume" element={<TailoringResultPage />} />
             {/* Protected Routes */}
             <Route
               path="/dashboard"
