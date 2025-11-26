@@ -1,5 +1,6 @@
-/* ========== Tailoring Result Page ========== */
+.professional-resume
 
+/* ========== Tailoring Result Page ========== */
 .result-page {
     padding: 2rem;
     max-width: 1200px;
@@ -9,20 +10,20 @@
     gap: 1.5rem;
 }
 
-.result-header h1 {
+.professional-resume .result-header h1 {
     font-size: 2rem;
     color: var(--text-color);
     margin-bottom: 0.25rem;
     text-align: center;
 }
 
-.result-header .section-subtitle {
+.professional-resume .result-header .section-subtitle {
     text-align: center;
     color: var(--text-secondary);
     margin-bottom: 0.5rem;
 }
 
-.resume-source {
+.professional-resume .resume-source {
     text-align: center;
     font-size: 0.9rem;
     color: var(--text-secondary);
@@ -32,7 +33,7 @@
     border-left: 3px solid var(--primary-color);
 }
 
-.result-content {
+.professional-resume .result-content {
     background-color: white;
     border: 1px solid var(--border-color);
     border-radius: 10px;
@@ -43,13 +44,13 @@
     overflow-y: auto;
 }
 
-.resume-preview-container {
+.professional-resume .resume-preview-container {
     padding: 3rem;
     background: white;
 }
 
 /* Professional Resume Layout */
-.professional-resume {
+.professional-resume .professional-resume {
     font-family: "Calibri", "Segoe UI", sans-serif;
     line-height: 1.4;
     color: #333;
@@ -58,14 +59,14 @@
 }
 
 /* Resume Header */
-.resume-header {
+.professional-resume .resume-header {
     text-align: center;
     margin-bottom: 2rem;
     border-bottom: 2px solid #2c5aa0;
     padding-bottom: 1rem;
 }
 
-.resume-name {
+.professional-resume .resume-name {
     font-size: 28px;
     font-weight: bold;
     color: #2c5aa0;
@@ -74,7 +75,7 @@
     letter-spacing: 1px;
 }
 
-.contact-info {
+.professional-resume .contact-info {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -83,17 +84,17 @@
     color: #666;
 }
 
-.contact-item {
+.professional-resume .contact-item {
     white-space: nowrap;
 }
 
 /* Resume Sections */
-.resume-section {
+.professional-resume .resume-section {
     margin-bottom: 1.5rem;
     page-break-inside: avoid;
 }
 
-.section-title {
+.professional-resume .section-title {
     font-size: 16px;
     font-weight: bold;
     color: #2c5aa0;
@@ -104,12 +105,12 @@
     letter-spacing: 0.5px;
 }
 
-.section-content {
+.professional-resume .section-content {
     margin-left: 0;
 }
 
 /* Summary Section */
-.summary-text {
+.professional-resume .summary-text {
     font-size: 14px;
     text-align: justify;
     margin: 0;
@@ -117,30 +118,30 @@
 }
 
 /* Education Section */
-.education-item {
+.professional-resume .education-item {
     font-size: 14px;
     margin-bottom: 0.5rem;
     line-height: 1.4;
 }
 
 /* Experience Section */
-.experience-item {
+.professional-resume .experience-item {
     margin-bottom: 1.2rem;
 }
 
-.job-title {
+.professional-resume .job-title {
     font-size: 14px;
     font-weight: bold;
     color: #333;
     margin-bottom: 0.3rem;
 }
 
-.job-points {
+.professional-resume .job-points {
     margin: 0.3rem 0 0 1rem;
     padding: 0;
 }
 
-.job-points li {
+.professional-resume .job-points li {
     font-size: 13px;
     margin-bottom: 0.2rem;
     line-height: 1.4;
@@ -148,13 +149,13 @@
 }
 
 /* Skills Section */
-.skills-grid {
+.professional-resume .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 0.5rem;
 }
 
-.skill-item {
+.professional-resume .skill-item {
     font-size: 13px;
     padding: 0.2rem 0;
     border-left: 3px solid #2c5aa0;
@@ -162,22 +163,22 @@
 }
 
 /* Certifications & Languages */
-.certification-item,
-.language-item {
+.professional-resume .certification-item,
+.professional-resume .language-item {
     font-size: 13px;
     margin-bottom: 0.3rem;
     padding-left: 0.5rem;
 }
 
 /* Loading animation */
-.loading-placeholder {
+.professional-resume .loading-placeholder {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
     padding: 2rem;
 }
 
-.loading-line {
+.professional-resume .loading-line {
     height: 16px;
     background: linear-gradient(90deg,
             var(--border-color) 25%,
@@ -188,7 +189,7 @@
     animation: loadingAnim 1.5s infinite;
 }
 
-.loading-line.short {
+.professional-resume .loading-line.short {
     width: 60%;
 }
 
@@ -203,14 +204,14 @@
 }
 
 /* Buttons */
-.result-actions {
+.professional-resume .result-actions {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     margin-top: 1rem;
 }
 
-.result-actions button {
+.professional-resume .result-actions button {
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
@@ -219,37 +220,37 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .result-page {
+    .professional-resume .result-page {
         padding: 1rem;
     }
 
-    .resume-preview-container {
+    .professional-resume .resume-preview-container {
         padding: 1.5rem;
     }
 
-    .result-content {
+    .professional-resume .result-content {
         max-height: 70vh;
     }
 
-    .resume-name {
+    .professional-resume .resume-name {
         font-size: 22px;
     }
 
-    .contact-info {
+    .professional-resume .contact-info {
         flex-direction: column;
         gap: 0.5rem;
         align-items: center;
     }
 
-    .skills-grid {
+    .professional-resume .skills-grid {
         grid-template-columns: 1fr;
     }
 
-    .result-actions {
+    .professional-resume .result-actions {
         flex-direction: column;
     }
 
-    .result-actions button {
+    .professional-resume .result-actions button {
         min-width: auto;
         width: 100%;
     }
@@ -258,23 +259,23 @@
 /* Print styles */
 @media print {
 
-    .result-actions,
-    .result-header {
+    .professional-resume .result-actions,
+    .professional-resume .result-header {
         display: none;
     }
 
-    .result-content {
+    .professional-resume .result-content {
         border: none;
         box-shadow: none;
         max-height: none;
         overflow: visible;
     }
 
-    .resume-preview-container {
+    .professional-resume .resume-preview-container {
         padding: 0;
     }
 
-    .professional-resume {
+    .professional-resume .professional-resume {
         max-width: none;
     }
 }

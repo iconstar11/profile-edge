@@ -27,7 +27,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>
+          <h1 className="big">
             Build Smarter <br /> <span className="highlight">CVs with AI</span>
           </h1>
           <p>

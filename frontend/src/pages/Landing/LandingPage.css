@@ -496,3 +496,7 @@
 .socials a:hover {
   color: var(--primary-accent);
 }
+
+.hero-content .big {
+  font-size: 5rem;
+}
